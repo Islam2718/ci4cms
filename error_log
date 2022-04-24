@@ -1,0 +1,4 @@
+[24-Dec-2021 22:41:42 America/New_York] PHP Warning:  require(/home/islam59/public_html/avon/../avonApps/app/Config/Paths.php): failed to open stream: No such file or directory in /home/islam59/public_html/avon/index.php on line 22
+[24-Dec-2021 22:41:42 America/New_York] PHP Fatal error:  require(): Failed opening required '/home/islam59/public_html/avon/../avonApps/app/Config/Paths.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/islam59/public_html/avon/index.php on line 22
+[12-Feb-2022 05:51:57 America/Chicago] PHP Fatal error:  Cannot redeclare App\Controllers\HomeController::SubscribeMethod() in /home4/aveenira/public_html/noortraders/avonApps/app/Controllers/HomeController.php on line 151
+[12-Feb-2022 05:52:04 America/Chicago] PHP Fatal error:  Cannot redeclare App\Controllers\HomeController::SubscribeMethod() in /home4/aveenira/public_html/noortraders/avonApps/app/Controllers/HomeController.php on line 151
