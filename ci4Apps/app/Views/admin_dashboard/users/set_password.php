@@ -28,7 +28,7 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('<?= base_url('/uploads/'.$siteInfo['logo_header']); ?>'); "></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('<?= base_url('/uploads/'.$siteInfo['logo_header']); ?>'); background-size: 69%; background-repeat: no-repeat; "></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -47,13 +47,13 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Update Password
                                         </button>
-<?php if(isset($eStatus)){ ?>
-<div class="alert alert-success"><?= $eStatus; ?></div>
-<?php } ?>                                        
+                                        <?php if(isset($eStatus)){ ?>
+                                        <div class="alert alert-success"><?= $eStatus; ?></div>
+                                        <?php } ?>                                        
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url('login'); ?>">Already have an account? Login!</a>
+                                        <a class="small" href="<?= base_url('admin-login'); ?>">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

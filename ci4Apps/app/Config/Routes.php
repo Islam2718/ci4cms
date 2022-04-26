@@ -84,9 +84,6 @@ $routes->get('/', 'HomeController::index');
 
 
 /*|CUSTOM SETTINGS.|*/
-$routes->match(['get','post'],'Ticker-settings', 'CustomController::tickerMethod');
-$routes->match(['get','post'],'Ticker-remove/(:any)', 'CustomController::tickerDelMethod/$1');
-$routes->match(['get','post'],'Ticker-edit/(:any)', 'CustomController::tickerEditMethod/$1');
 
 $routes->match(['get','post'],'third-grid', 'CustomController::thirdgridMethod',$val);
 $routes->match(['get','post'],'third-grid-delete/(:any)', 'CustomController::thirdgridDeleteMethod/$1/$2',$val);
@@ -118,7 +115,6 @@ $routes->match(['get','post'],'profile-password', 'UserController::profilePasswo
 
 /* |ADMIN ROUTINGS..| */
 $routes->match(['get','post'],'Dashboard', 'AdminController::dashboardMethod',$val);
-$routes->match(['get','post'],'homepage-options', 'AdminController::homepageMethod',$val);
 $routes->match(['get','post'],'Site-settings', 'SiteinfoController::siteinfoMethod',$val);
 $routes->match(['get','post'],'size-guide-settings', 'SiteinfoController::sizeGuideMethod',$val);
 $routes->match(['get','post'],'Menu-settings', 'AdminController::menusMethod',$val);

@@ -62,54 +62,10 @@ class AdminController extends BaseController
             'siteInfo' => $siteinfoModel->where('id',1)->first(), 
         ); 
         echo view('admin_dashboard/common/header',$data); 
-        echo view('admin_dashboard/dashboard',$data);  
+        echo view('admin_dashboard/system/dashboard',$data);  
         echo view('admin_dashboard/common/footer',$data); 
     } 
 
-    /* | Dashboard METHOD | */
-    public function homepageMethod(){
-        $siteinfoModel = new SiteinfoModel();
-        $pageModel = new PageModel();
-        $categoryModel = new CategoryModel();
-        $postModel = new PostModel();
-        $landingModel = new LandingModel();
-
-        if($this->request->getMethod() == 'post'){
-            $rules = [
-                'field1'    => 'required',
-            ];
-
-            if(! $this->validate($rules)){
-                $data['validation'] = $this->validator; 
-                return redirect()->to('homepage-options');
-            }else{
-                $newData = [
-                    'field1'  => $this->request->getVar('field1'),
-                    'field2'  => $this->request->getVar('field2'),
-                    'field3'  => $this->request->getVar('field3'),
-                    'field4'  => $this->request->getVar('field4'),
-                ]; 
-
-                if($landingModel->where('id', 1)->set($newData)->update()){
-                    return redirect()->to('homepage-options');
-                }
-            }
-        }
-        
-        //page load...
-        $data = array(
-            'totalPage' => $pageModel->countAll(), 
-            'totalCategory' => $categoryModel->countAll(), 
-            'totalPost' => $postModel->countAll(), 
-
-            'activeMenu' => 'Dashboard',
-            'siteInfo' => $siteinfoModel->where('id',1)->first(), 
-            'landingInfo' => $landingModel->where('id',1)->first(), 
-        ); 
-        echo view('admin_dashboard/common/header',$data); 
-        echo view('admin_dashboard/homepage',$data);  
-        echo view('admin_dashboard/common/footer',$data); 
-    }
 
     /* | CONTACT US / MESSAGE| */
     public function menusMethod(){

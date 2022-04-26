@@ -115,7 +115,7 @@ class SiteinfoController extends BaseController
             'siteInfo' => $siteinfoModel->where('id',1)->first(),  
         ); 
         echo view('admin_dashboard/common/header',$data); 
-        echo view('admin_dashboard/site_settings',$data);  
+        echo view('admin_dashboard/system/site_settings',$data);  
         echo view('admin_dashboard/common/footer',$data); 
     }
 
