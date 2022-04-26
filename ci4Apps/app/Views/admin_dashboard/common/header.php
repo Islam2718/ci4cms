@@ -131,14 +131,12 @@
                 <img src="<?= base_url('/uploads/'.$siteInfo['logo_header']); ?>" style="height:70; width:70px;">
                 <div class="sidebar-brand-text mx-3"><?= $siteInfo['name']; ?></div>
             </a>
-
             <hr class="sidebar-divider my-0">
             <li class="nav-item <?php if($activeMenu=='Dashboard'){ echo 'active'; }?>">
                 <a class="nav-link" href="<?= base_url('Dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
 <?php if (strpos(session('active_functions'), 'Site Settings') !== false) { ?>
             <li class="nav-item <?php if($activeMenu=='Siteinfo'){ echo 'active'; }?>">
                 <a class="nav-link" href="<?= base_url('Site-settings'); ?>">
@@ -146,23 +144,21 @@
                     <span>Site Settings</span></a>
             </li>
 <?php } ?>   
-
 <?php if (strpos(session('active_functions'), 'Business Settings') !== false) { ?>                     
             <li class="nav-item <?php if($activeMenu=='Business Settings'){ echo 'active'; }?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBusiness"
                     aria-expanded="true" aria-controls="collapseBusiness">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-pager"></i>
                     <span>Homepage Settings</span>
                 </a>
                 <div id="collapseBusiness" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Business Settings:</h6>                        
+                        <h6 class="collapse-header">Homepage Settings:</h6>                        
                         <a class="collapse-item" href="#">Custom Links...</a>
                     </div>
                 </div>
             </li>
 <?php } ?>   
-
 <?php if (strpos(session('active_functions'), 'Social Settings') !== false) { ?>
             <li class="nav-item <?php if($activeMenu=='Social'){ echo 'active'; }?>">
                 <a class="nav-link" href="<?= base_url('Social-media-settings'); ?>">
@@ -170,7 +166,6 @@
                     <span>Social Settings</span></a>
             </li>
 <?php } ?> 
-
 <?php if (strpos(session('active_functions'), 'Slider') !== false) { ?>           
             <li class="nav-item <?php if($activeMenu=='Slider'){ echo 'active'; }?>">
                 <a class="nav-link" href="<?= base_url('Slider-settings'); ?>">
@@ -238,16 +233,29 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Orders</span></a>
             </li>
-            <li class="nav-item <?php if($activeMenu=='reports'){ echo 'active'; }?>">
-                <a class="nav-link" href="<?= base_url('reports'); ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Reports</span></a>
-            </li> 
             <li class="nav-item <?php if($activeMenu=='shipping'){ echo 'active'; }?>">
                 <a class="nav-link" href="<?= base_url('shipping-charge'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Shipping Charge</span></a>
             </li>  
+            <li class="nav-item <?php if($activeMenu=='shop'){ echo 'active'; }?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clpseReports"
+                    aria-expanded="true" aria-controls="clpseReports">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Reports</span>
+                </a>
+                <div id="clpseReports" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Sales Report</a>
+                        <a class="collapse-item" href="#">Stock Report</a>
+                        <a class="collapse-item" href="#">Purchase Report</a>
+                        <a class="collapse-item" href="#">Most ordered Area</a>
+                        <a class="collapse-item" href="#">Most Solded Product</a>
+                        <a class="collapse-item" href="#">Top Customer</a>
+                    </div>
+                </div>
+            </li> 
             <li class="nav-item <?php if($activeMenu=='shop'){ echo 'active'; }?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#colpsSizeGuide"
                     aria-expanded="true" aria-controls="colpsSizeGuide">
@@ -257,12 +265,37 @@
                 <div id="colpsSizeGuide" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('size-guide-settings'); ?>">Product Size Guide </a>
+                        <a class="collapse-item" href="#">General (sale on/off)</a>
+                        <a class="collapse-item" href="#">Shipping</a>
+                        <a class="collapse-item" href="#">Discount</a>
+                        <a class="collapse-item" href="#">Vat & Tax</a>
+                        <a class="collapse-item" href="#">Coupons</a>
                     </div>
                 </div>
             </li>             
 <?php } ?> 
 
+
+<!-- Divider -->
+<hr class="sidebar-divider">   
+<?php if (strpos(session('active_functions'), 'Pages') !== false) { ?>  
+            <div class="sidebar-heading"> Walets</div>                     
+            <li class="nav-item <?php if($activeMenu=='Page'){ echo 'active'; }?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clpseWalets"
+                    aria-expanded="true" aria-controls="clpseWalets">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Walets</span>
+                </a>
+                <div id="clpseWalets" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Walets Options:</h6>
+                        <a class="collapse-item" href="#">Expense (CRUD)</a>
+                        <a class="collapse-item" href="#">Income (CRUD)</a>
+                        <a class="collapse-item" href="#">Reports</a>
+                    </div>
+                </div>
+            </li>
+<?php } ?> 
 
 <!-- Divider -->
 <hr class="sidebar-divider">   

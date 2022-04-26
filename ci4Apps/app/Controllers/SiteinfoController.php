@@ -119,62 +119,6 @@ class SiteinfoController extends BaseController
         echo view('admin_dashboard/common/footer',$data); 
     }
 
-    /* | SITE INFO | */
-    public function sizeGuideMethod()
-    {
-        $siteinfoModel = new SiteinfoModel();
-        $pageModel = new PageModel();
-        $categoryModel = new CategoryModel();
-        $postModel = new PostModel();
-
-        if($this->request->getMethod() == 'post'){
-            $rules = [
-                'size_guide_old'   => 'required',
-            ];
-
-            if(! $this->validate($rules)){
-                $data['validation'] = $this->validator; 
-                return redirect()->to(base_url('size-guide-settings'));
-            }else{
-
-                //ICON DYNAMIC...
-                $size_guide_old = $this->request->getVar('size_guide_old'); 
-                $fileIcon = $this->request->getFile('size_guide'); 
-                if(!empty($fileIcon->getName())){
-                    $nameIcon = 'size_guide_'.time().'_'.$fileIcon->getName();
-                    if($fileIcon->move('uploads', $nameIcon)){  
-                        @unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$size_guide_old);    
-                        $size_guide = $nameIcon;
-                    }                  
-                }else{ $size_guide = $size_guide_old; }
-
-
-                
-                /* | DATA UPDATE |*/
-                $newData = [
-                    'size_guide' => $size_guide,
-                ]; 
-
-                if($siteinfoModel->where('id', 1)->set($newData)->update()){
-                    return redirect()->to('size-guide-settings');
-                }
-            }
-        }
-        
-        //page load...
-        $data = array(
-            'totalPage' => $pageModel->countAll(), 
-            'totalCategory' => $categoryModel->countAll(), 
-            'totalPost' => $postModel->countAll(), 
-
-            'activeMenu' => 'Guide',
-            'siteInfo' => $siteinfoModel->where('id',1)->first(),  
-        ); 
-        echo view('admin_dashboard/common/header',$data); 
-        echo view('admin_dashboard/size_guide_settings',$data);  
-        echo view('admin_dashboard/common/footer',$data); 
-    }
-
     /* | SLIDER LIST | */
     public function sliderMethod()
     {

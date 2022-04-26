@@ -32,66 +32,8 @@ $routes->setAutoRoute(true);
 $val = ['filter'=>'auth'];
 $notVal = ['filter'=>'noauth']; 
 
-
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
-
 /*| FRONT-END ROUTINGS... |*/
-$routes->get('/', 'HomeController::index');
-// $routes->match(['get','post'],'Page/(:any)', 'HomeController::pageMethod/$1');
-// $routes->match(['get','post'],'Subscribe', 'HomeController::SubscribeMethod');
-// $routes->match(['get','post'],'shopping-cart', 'HomeController::ShoppingCart');
-// $routes->match(['get','post'],'shopping-cart-post', 'HomeController::ShoppingCartPost');
-// $routes->match(['get','post'],'customer-login', 'HomeController::CustomerLogin');
-
-//customer logins areas.. 
-// $routes->match(['get','post'],'customer-registration', 'HomeController::CustomerRegistrationMethod');
-// $routes->match(['get','post'],'customer-login', 'HomeController::CustomerLoginMethod');
-// $routes->match(['get','post'],'customer-login-shopping-cart', 'HomeController::CustomerLoginMethodCart');
-// $routes->match(['get','post'],'customer-logout', 'HomeController::CustomerLogoutMethod');
-// $routes->match(['get','post'],'customer-forget-password', 'HomeController::CustomerForgetPasswordMethod');
-// $routes->match(['get','post'],'customer-checkout', 'HomeController::checkoutMethod');
-
-//customer dashboard 
-// $routes->match(['get','post'],'customer-order-details/(:any)', 'HomeController::customerOrderByID/$1',$val);
-// $routes->match(['get','post'],'customer-order-confirmation/(:any)', 'HomeController::customerOrderConfirmationByID/$1',$val);
-// $routes->match(['get','post'],'customer-dashboard', 'HomeController::customerDashboard',$val);
-// $routes->match(['get','post'],'customer-order', 'HomeController::cusDashboardOrder',$val);
-// $routes->match(['get','post'],'customer-address', 'HomeController::cusDashboardAddress',$val);
-// $routes->match(['get','post'],'customer-acc', 'HomeController::cusDashboardAcc',$val);
-// $routes->match(['get','post'],'customer-profile', 'HomeController::cusDashboardProfile',$val);
-// $routes->match(['get','post'],'customer-change-password', 'HomeController::changePassword',$val);
-
-// $routes->match(['get','post'],'products/(:any)', 'HomeController::productPageMethod/$1');
-// $routes->match(['get','post'],'new-products', 'HomeController::newProductPageMethod');
-// $routes->match(['get','post'],'product-details/(:any)', 'HomeController::productDetailsByIdMethod/$1');
-// $routes->match(['get','post'],'search-product', 'HomeController::searchProductPageMethod');
-
-// $routes->match(['get','post'],'gallery', 'HomeController::galleryPageMethod');
-// $routes->match(['get','post'],'videos', 'HomeController::videoPageMethod');
-// $routes->match(['get','post'],'our-news', 'HomeController::newsPageMethod');
-// $routes->match(['get','post'],'career-circular', 'HomeController::circularPageMethod');
-// $routes->match(['get','post'],'career-notice', 'HomeController::noticePageMethod');
-// $routes->match(['get','post'],'Reports', 'HomeController::reportPageMethod');
-// $routes->match(['get','post'],'corporate-brief', 'HomeController::cbfPageMethod');
-// $routes->match(['get','post'],'products', 'HomeController::productPageMethod');
-
-
-/*| USER METHOD - LOGIN, REGISTRATION, FORGET, CRUD, ACCESS|*/
-// $routes->match(['get','post'],'admin-login', 'UserController::loginMethod');
-// $routes->match(['get','post'],'Register', 'UserController::registerMethod');
-// $routes->match(['get','post'],'Forget-password', 'UserController::forgetPasswrod');
-
-
-/*|CUSTOM SETTINGS.|*/
-
-$routes->match(['get','post'],'third-grid', 'CustomController::thirdgridMethod',$val);
-$routes->match(['get','post'],'third-grid-delete/(:any)', 'CustomController::thirdgridDeleteMethod/$1/$2',$val);
-$routes->match(['get','post'],'third-grid-edit/(:any)', 'CustomController::thirdgridEditMethod/$1/$2',$val);
-
-$routes->match(['get','post'],'banner-settings', 'CustomController::bannerMethod',$val);
-$routes->match(['get','post'],'banner-delete/(:any)', 'CustomController::bannerDeleteMethod/$1/$2',$val);
-$routes->match(['get','post'],'banner-edit/(:any)', 'CustomController::bannerEditMethod/$1/$2',$val);
+$routes->get('/', 'HomeController::index',$notVal);
 
 /* |USERS ROUTINGS| */
 $routes->match(['get','post'],'admin-login', 'UserController::UserLoginMethod',$notVal);

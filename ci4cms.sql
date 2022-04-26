@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2022 at 11:31 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Apr 26, 2022 at 10:18 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,67 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `ci4cms`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_banner`
---
-
-CREATE TABLE `tbl_banner` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_banner`
---
-
-INSERT INTO `tbl_banner` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'Test Banner', 'Test Banner', 'client_1648729280_b3.jpg', 'Test Banner', '', '', '', 0, '2022-03-31 12:21:20', '0000-00-00 00:00:00'),
-(4, 'Test Banner', 'Test Banner', 'client_1648976497_b4.jpg', 'Test Banner', '', '', '', 0, '2022-04-03 09:01:37', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_career`
---
-
-CREATE TABLE `tbl_career` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_career`
---
-
-INSERT INTO `tbl_career` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'test career  100', 'test career test career test career test career test career test career test career test career test career test career test career test career test career test career test career ', 'career_1643889931_005-coffee-bag.png', 'Notice', 'test career ', 'test career ', '', 0, '2022-02-07 08:53:24', '0000-00-00 00:00:00'),
-(4, 'test career 101 ', 'test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 test career 101 ', 'career_1643883513_005-coffee-bag.png', 'Circular', 'test career 101 ', 'test career 101 ', '', 0, '2022-02-07 08:53:29', '0000-00-00 00:00:00'),
-(5, 'test career 102 ', 'test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 test career 102 ', 'career_1643883534_5.jpg', 'Notice', 'test career 102 ', 'test career 102 ', '', 0, '2022-02-07 08:53:33', '0000-00-00 00:00:00'),
-(6, 'test career 103 ', 'test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 test career 103 ', 'career_1643883575_pic.png', 'Notice', 'test career 103 ', 'test career 103 ', '', 0, '2022-02-07 08:53:37', '0000-00-00 00:00:00'),
-(7, 'test ', 'test ', 'career_1643884427_004-id-card-1.png', 'Circular', 'test', 'test', '', 0, '2022-02-07 08:53:42', '0000-00-00 00:00:00'),
-(9, 'New Circular ', 'New Circular ', 'career_1644224522_citation-221229350.pdf', 'Circular', 'New Circular ', 'New Circular ', '', 0, '2022-02-07 09:02:02', '0000-00-00 00:00:00'),
-(10, 'This is new notice ', 'This is new notice ', 'career_1644224805_citation-221229350.pdf', 'Notice', 'This is new notice ', 'This is new notice ', '', 0, '2022-02-07 09:06:45', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -109,35 +48,6 @@ INSERT INTO `tbl_category` (`id`, `title`, `description`, `thumb`, `meta_key`, `
 (1, 'Category', 'Category101 Category101 Category101 Category101 Category101 Category101 Category101 Category101 Category101 Category101 Category', '01.png', 'Category', '', 'Category101 ', 0, '2022-01-02 07:31:24', '2022-01-01 08:41:17'),
 (6, 'Fashion ', 'Fashion Fashion Fashion Fashion Fashion Fashion Fashion Fashion Fashion Fashion Fashion Fashion ', 'cat_1641109099_1.jpg', 'Fashion 101', '', '', 0, '2022-01-11 12:29:21', '0000-00-00 00:00:00'),
 (7, 'Career', 'Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 Career 101 ', 'cat_1648977459_size_guide_1648127303_Size Chart.jpg', 'Career', '', '', 0, '2022-04-03 09:17:39', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_client`
---
-
-CREATE TABLE `tbl_client` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_client`
---
-
-INSERT INTO `tbl_client` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'EzyBuyBD', 'n/a', 'client_1643888877_005-coffee-bag.png', 'Client 101 ', 'Client 101 ', 'Client 101 ', '', 0, '2022-02-10 12:28:08', '0000-00-00 00:00:00'),
-(4, 'EzyBuyBD', 'n/a', 'client_1643888877_005-coffee-bag.png', 'Client 101 ', 'Client 101 ', 'Client 101 ', '', 0, '2022-02-10 12:28:08', '0000-00-00 00:00:00'),
-(5, 'Krishibari', 'n/a', 'client_1644667142_client_1643890262_islam.jpg', 'Krishibari', 'Client', 'Client', '', 0, '2022-02-12 11:59:02', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -215,88 +125,6 @@ INSERT INTO `tbl_contact_replay` (`id`, `contact_id`, `email`, `subject`, `messa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_corporate`
---
-
-CREATE TABLE `tbl_corporate` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_corporate`
---
-
-INSERT INTO `tbl_corporate` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Aldus PageMaker including versions of Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'client_1644235000_sli (4).jpg', 'asdf asd', 'asdf asdf ', '2022-02-07', '', 0, '2022-02-07 11:56:40', '0000-00-00 00:00:00'),
-(2, 'Lorem Ipsum passages, and more recently', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'client_1644234975_sli (2).jpg', 'asdf asd fa', 'asdf asdf ', '2022-02-07', '', 0, '2022-02-07 11:56:15', '0000-00-00 00:00:00'),
-(3, 'Lorem Ipsum is simply dummy', ' text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'client_1644233731_2.jpg', 'asdfasdf asdf', 'sadf sfadf sdf', '2022-02-17', '', 0, '2022-02-07 11:55:58', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_gallery`
---
-
-CREATE TABLE `tbl_gallery` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_gallery`
---
-
-INSERT INTO `tbl_gallery` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'Gallery101', 'Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101Gallery101', 'client_1643890327_aW7n3C.jpg', 'Gallery101', 'Gallery101', 'Gallery101', '', 0, '2022-02-03 12:12:07', '0000-00-00 00:00:00'),
-(4, 'Gallery102', 'Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102Gallery102', 'client_1643890359_45879.jpg', 'Gallery102101', 'Gallery102', 'Gallery102', '', 0, '2022-02-07 06:22:53', '0000-00-00 00:00:00'),
-(7, 'Gallery', 'Gallery', 'client_1644215066_04.jpg', 'Gallery', 'n/a', 'n/a', '', 0, '2022-02-12 12:02:38', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_landing`
---
-
-CREATE TABLE `tbl_landing` (
-  `id` int(11) NOT NULL,
-  `field1` text NOT NULL,
-  `field2` text NOT NULL,
-  `field3` text NOT NULL,
-  `field4` text NOT NULL,
-  `field5` text NOT NULL,
-  `field6` text NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_landing`
---
-
-INSERT INTO `tbl_landing` (`id`, `field1`, `field2`, `field3`, `field4`, `field5`, `field6`, `status`) VALUES
-(1, 'test', 'test', 'test', 'test', 'test', 'test', 0);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_menu`
 --
 
@@ -324,35 +152,6 @@ INSERT INTO `tbl_menu` (`id`, `location`, `type`, `title`, `menu_html`, `link_ur
 (17, 'Menu_Location_02', 'page', 'SIZE GUIDE', '', '42', 0, '2022-03-03 10:35:28', '0000-00-00 00:00:00'),
 (18, 'Menu_Location_03', 'page', 'RETURN POLICY', '', '45', 0, '2022-03-03 10:35:51', '0000-00-00 00:00:00'),
 (19, 'Menu_Location_04', 'page', 'OUR STORY', '', '44', 0, '2022-03-03 10:36:03', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_news`
---
-
-CREATE TABLE `tbl_news` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` varchar(255) NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_news`
---
-
-INSERT INTO `tbl_news` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'test ', 'test ', 'client_1643889899_Animaplates-3DRobot-Screenshot.png', 'test ', 'test ', '2022-02-07', '', 0, '2022-02-07 07:43:36', '0000-00-00 00:00:00'),
-(4, 'fdas a', 'sdf asdf dasf ', 'client_1644219775_vt-1.PNG', 'Gallery102101', 'asd', '2022-02-08', '', 0, '2022-02-07 07:42:55', '0000-00-00 00:00:00'),
-(5, 'sadf asdf as', 'd fasdf asdf asd ', 'client_1644231510_004-id-card-1.png', 'asef asdf sdaf ', 'asdf asdf ', '2022-02-07', '', 0, '2022-02-07 10:58:30', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -607,105 +406,6 @@ INSERT INTO `tbl_product_size` (`id`, `title`, `size`, `status`, `created_at`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_property`
---
-
-CREATE TABLE `tbl_property` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` varchar(255) NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_property`
---
-
-INSERT INTO `tbl_property` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Test property 101 ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'property_1644056269_s4.jpg', 'Test property 101 ', 'Test property 101 ', 'Test property 101 ', '', 0, '2022-02-05 10:27:19', '0000-00-00 00:00:00'),
-(4, 'Test-Property ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'property_1644056254_s2.jpg', 'Test-Property ', 'Test-Property', 'Test-Property', '', 0, '2022-02-05 10:27:06', '0000-00-00 00:00:00'),
-(5, 'TestService', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'property_1644667039_client_1643889288_aW7n3C.jpg', 'Test Service', 'n/a', 'n/a', '', 0, '2022-02-12 11:57:19', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_quote`
---
-
-CREATE TABLE `tbl_quote` (
-  `id` int(11) NOT NULL,
-  `category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `whatsapp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `wechat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `commodity` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ready_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `delivery_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ship_from` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ship_to` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `country_from` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `country_to` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `commodity_details` text COLLATE utf8_unicode_ci NOT NULL,
-  `types` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `container_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `container_qty` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `weight` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `no_of_cartoon` text COLLATE utf8_unicode_ci NOT NULL,
-  `volume` text COLLATE utf8_unicode_ci NOT NULL,
-  `warehouse` text COLLATE utf8_unicode_ci NOT NULL,
-  `delivery_address` text COLLATE utf8_unicode_ci NOT NULL,
-  `remarks` text COLLATE utf8_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `tbl_quote`
---
-
-INSERT INTO `tbl_quote` (`id`, `category`, `name`, `phone`, `whatsapp`, `wechat`, `email`, `commodity`, `ready_date`, `delivery_date`, `ship_from`, `ship_to`, `country_from`, `country_to`, `commodity_details`, `types`, `container_type`, `container_qty`, `weight`, `no_of_cartoon`, `volume`, `warehouse`, `delivery_address`, `remarks`, `status`, `created_at`) VALUES
-(1, 'C&F', 'tst', 'tst', 'terkj', 'kjjkjk', 'm@mail.com', 'kjklj', '2022-01-31', '2021-12-30', '12456', '654584', 'bangladesh', 'bangladesh', 'test', 'FCL', 'Chose...', '0', '', '', '', 'Chose...', '', '4565', 0, '2022-02-13 11:16:04');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_report`
---
-
-CREATE TABLE `tbl_report` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_report`
---
-
-INSERT INTO `tbl_report` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'asdf asdf asdf ', 'asdf asdf asdf ', 'client_1644231602_004-id-card-1.png', 'asdf asd asdf', 'asdf asd ', '2022-02-07', '', 0, '2022-02-07 11:00:02', '0000-00-00 00:00:00'),
-(2, 'asdf asdf ', 'asdf asdf asdf', 'client_1644232103_citation-221229350.pdf', 'asdf asdf ', 'asd fasd f', '2022-02-07', '', 0, '2022-02-07 11:08:23', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_shipping_charge`
 --
 
@@ -762,7 +462,7 @@ CREATE TABLE `tbl_siteinfo` (
 --
 
 INSERT INTO `tbl_siteinfo` (`id`, `title`, `name`, `email`, `phone`, `fax`, `address`, `description`, `logo_header`, `logo_footer`, `icon`, `size_guide`, `copyright`, `web_link`, `map_html`, `meta_key`, `meta_des`, `meta_schema`, `license`, `status`, `created_at`, `update_at`) VALUES
-(1, 'Ci4 CMS', 'Ci4 CMS', 'info@islamhossain.info', '01710001337', '+1 323 555 1234 </br>\r\n+1 267 555 12342', 'Dhaka - 1207 ', 'Ci4 CMS', 'logoh_1650662717_logo.png', 'logof_1650662717_logo.png', 'icon_1650662717_logo.png', 'size_guide_1648977366_size_guide_1648127303_Size Chart.jpg', '', 'https://islamhossain.info', 'n/a', 'meta_key', 'meta_des', 'meta_schema', 'n/a', 0, '2022-04-22 21:26:28', '2021-12-27 10:25:04');
+(1, 'Ci4 CMS', 'Ci4 CMS', 'info@islamhossain.info', '01710001337', '+1 323 555 1234 </br>\r\n+1 267 555 12342', 'Dhaka - 1207 ', 'Ci4 CMS', 'logoh_1650662717_logo.png', 'logof_1650662717_logo.png', 'icon_1650662717_logo.png', 'size_guide_1648977366_size_guide_1648127303_Size Chart.jpg', '', 'https://islamhossain.info', 'n/a', 'meta_key', 'meta_des', 'meta_schema', 'n/a', 0, '2022-04-26 04:13:48', '2021-12-27 10:25:04');
 
 -- --------------------------------------------------------
 
@@ -1023,90 +723,6 @@ INSERT INTO `tbl_subscribe` (`id`, `name`, `email`, `phone`, `description`, `sta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_team`
---
-
-CREATE TABLE `tbl_team` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` varchar(255) NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_team`
---
-
-INSERT INTO `tbl_team` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Project Manager', 'Vai holo oita..? ', 'career_1643885404_pic.png', 'Project Manager', 'done', 'done', '', 0, '2022-02-13 09:06:41', '0000-00-00 00:00:00'),
-(3, 'done 2022', 'CEO - Kal hobe', 'career_1644226232_c65fb097732135822bba20a777076508.jpg', 'done 2022', 'done', 'done', '', 0, '2022-02-13 09:06:21', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_thirdgrid`
---
-
-CREATE TABLE `tbl_thirdgrid` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` text NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_thirdgrid`
---
-
-INSERT INTO `tbl_thirdgrid` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Test 3rd Grid', 'n/a', 'client_1646806079_p3.jpg', 'Test 3rd Grid', 'n/a', 'n/a', '', 0, '2022-03-09 06:07:59', '0000-00-00 00:00:00'),
-(3, 'test new product ', 'sdf', 'client_1646806073_p2.jpg', 'test new product ', '', '', '', 0, '2022-03-09 06:07:53', '0000-00-00 00:00:00'),
-(4, 'test n', 'sdf', 'client_1648591835_Screenshot 2022-03-30 032111.png', 'test n', '', '', '', 0, '2022-03-29 22:10:35', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_ticker`
---
-
-CREATE TABLE `tbl_ticker` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `link_url` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_ticker`
---
-
-INSERT INTO `tbl_ticker` (`id`, `title`, `description`, `link_url`, `status`, `created_at`) VALUES
-(1, 'my first line of ticker ', 'my first line of ticker ', 'my first line of ticker ', 0, '2022-02-28 06:48:59'),
-(3, 'My Ticker 505', 'My Ticker 101', 'My Ticker 101', 0, '2022-02-28 07:00:27'),
-(4, 'LULANI DRESS', 'asdf sadf ', 'Subscribe', 0, '2022-03-03 08:00:08'),
-(5, 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC', 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC', '', 0, '2022-03-03 08:03:12'),
-(6, 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC', 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC', '', 0, '2022-03-03 08:03:16'),
-(7, 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of ', 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC', 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of ', 0, '2022-04-03 09:00:07');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_user`
 --
 
@@ -1148,63 +764,14 @@ INSERT INTO `tbl_user` (`id`, `username`, `phone`, `email`, `password`, `firstna
 (44, 'Azan', '', 'azan@gmail.com', '$2y$10$M9byXIjuECBVEc7cQTxLmeoepMmuk5hr/XoE9Kf9AscJusTzHY7ze', '', '', '', '', 'CUSTOMER', 0, '', 0, '2022-04-04 06:25:11', '0000-00-00 00:00:00'),
 (45, 'saddam', '', 'saddam2@gmail.com', '$2y$10$l6.UJwuY4EbAdJcrKSl14O1ukZXlb.mX5039Hv/b02B.opoW344Dq', '', '', '', '', 'CUSTOMER', 0, '', 0, '2022-04-05 08:43:03', '0000-00-00 00:00:00');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_video`
---
-
-CREATE TABLE `tbl_video` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `thumb` varchar(255) NOT NULL,
-  `link_url` text NOT NULL,
-  `meta_key` varchar(255) NOT NULL,
-  `meta_des` text NOT NULL,
-  `meta_schema` text NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_video`
---
-
-INSERT INTO `tbl_video` (`id`, `title`, `description`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(7, 'asdf sadf as 158', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/XoaQfCY8oho\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '', 'asdf sadf as ', '', '', '', 0, '2022-02-07 07:20:59', '0000-00-00 00:00:00'),
-(13, 'jodi mon kade', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OHcT_r4Sx84\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '', '', '', '', '', 0, '2022-02-07 07:15:42', '0000-00-00 00:00:00'),
-(14, 'jodi na kade 101', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OHcT_r4Sx84\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '', 'jodi na kade ', '', '', '', 0, '2022-02-07 07:20:50', '0000-00-00 00:00:00'),
-(15, 'jodi sobai kade ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OHcT_r4Sx84\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '', '', '', '', '', 0, '2022-02-07 07:15:57', '0000-00-00 00:00:00'),
-(16, 'jodi sobai hase ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OHcT_r4Sx84\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '', '', '', '', '', 0, '2022-02-07 07:16:05', '0000-00-00 00:00:00');
-
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_banner`
---
-ALTER TABLE `tbl_banner`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_career`
---
-ALTER TABLE `tbl_career`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_client`
---
-ALTER TABLE `tbl_client`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1220,33 +787,9 @@ ALTER TABLE `tbl_contact_replay`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_corporate`
---
-ALTER TABLE `tbl_corporate`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_gallery`
---
-ALTER TABLE `tbl_gallery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_landing`
---
-ALTER TABLE `tbl_landing`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_news`
---
-ALTER TABLE `tbl_news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1283,24 +826,6 @@ ALTER TABLE `tbl_product_category`
 -- Indexes for table `tbl_product_size`
 --
 ALTER TABLE `tbl_product_size`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_property`
---
-ALTER TABLE `tbl_property`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_quote`
---
-ALTER TABLE `tbl_quote`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_report`
---
-ALTER TABLE `tbl_report`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1346,33 +871,9 @@ ALTER TABLE `tbl_subscribe`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_team`
---
-ALTER TABLE `tbl_team`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_thirdgrid`
---
-ALTER TABLE `tbl_thirdgrid`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_ticker`
---
-ALTER TABLE `tbl_ticker`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_video`
---
-ALTER TABLE `tbl_video`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1380,28 +881,10 @@ ALTER TABLE `tbl_video`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_banner`
---
-ALTER TABLE `tbl_banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tbl_career`
---
-ALTER TABLE `tbl_career`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `tbl_client`
---
-ALTER TABLE `tbl_client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_contact`
@@ -1416,34 +899,10 @@ ALTER TABLE `tbl_contact_replay`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tbl_corporate`
---
-ALTER TABLE `tbl_corporate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_gallery`
---
-ALTER TABLE `tbl_gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `tbl_landing`
---
-ALTER TABLE `tbl_landing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `tbl_news`
---
-ALTER TABLE `tbl_news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
@@ -1480,24 +939,6 @@ ALTER TABLE `tbl_product_category`
 --
 ALTER TABLE `tbl_product_size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `tbl_property`
---
-ALTER TABLE `tbl_property`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tbl_quote`
---
-ALTER TABLE `tbl_quote`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tbl_report`
---
-ALTER TABLE `tbl_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_shipping_charge`
@@ -1542,34 +983,10 @@ ALTER TABLE `tbl_subscribe`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_team`
---
-ALTER TABLE `tbl_team`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_thirdgrid`
---
-ALTER TABLE `tbl_thirdgrid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tbl_ticker`
---
-ALTER TABLE `tbl_ticker`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
---
--- AUTO_INCREMENT for table `tbl_video`
---
-ALTER TABLE `tbl_video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

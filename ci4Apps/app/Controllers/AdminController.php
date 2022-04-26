@@ -10,7 +10,7 @@ use App\Models\PageModel;
 use App\Models\CategoryModel;
 use App\Models\PostModel;
 use App\Models\MenuModel;
-use App\Models\LandingModel;
+
 
 use App\Models\ProductCategoryModel;
 use App\Models\ProductModel;

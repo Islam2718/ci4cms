@@ -3,24 +3,6 @@ namespace App\Controllers;
 use CodeIgniter\Controller; 
 
 use App\Models\SiteinfoModel; 
-use App\Models\SocialModel;
-use App\Models\SliderModel;
-use App\Models\ContactModel;
-use App\Models\PageModel;
-use App\Models\CategoryModel;
-use App\Models\PostModel;
-use App\Models\MenuModel;
-use App\Models\GalleryModel;
-use App\Models\LandingModel;
-use App\Models\ProductCategoryModel;
-use App\Models\ProductModel;
-use App\Models\SubscribeModel;
-use App\Models\TickerModel;
-use App\Models\UserModel;
-use App\Models\OrderModel;
-use App\Models\ThirdgridModel;
-use App\Models\BannerModel;
-use App\Models\ShippingchargeModel;
 
 class HomeController extends BaseController
 {
@@ -70,15 +52,6 @@ class HomeController extends BaseController
     public function index()
     {
         $siteinfoModel = new SiteinfoModel();  
-        $socialModel = new SocialModel(); 
-        $menuModel = new MenuModel(); 
-        $sliderModel = new SliderModel();   
-        $landingModel = new LandingModel(); 
-        $productCategoryModel = new ProductCategoryModel(); 
-        $productModel = new ProductModel(); 
-        $tickerModel = new TickerModel(); 
-        $thirdgridModel = new ThirdgridModel(); 
-        $bannerModel = new BannerModel(); 
 
         //page load...
         $data = array(
