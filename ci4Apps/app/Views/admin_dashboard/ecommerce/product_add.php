@@ -125,17 +125,15 @@
   </div>
   <div class="tab-pane fade row pt-4" id="stock" role="tabpanel" aria-labelledby="stock-tab">
 <!-------> 
-<?php foreach ($proSizeArray as $sizeData) { ?> 
-<div id="size<?= $sizeData['size']; ?>" class="hidden">
+<div id="size" class="hidden">
   <div class="form-group row">
-    <label for="quantity" class="col-sm-3 col-form-label text-right">Amount of (<?= $sizeData['title']; ?>) : </label>
+    <label for="quantity" class="col-sm-3 col-form-label text-right">Amount of : </label>
     <div class="col-sm-7">
-      <input name="quantity[]" type="text" class="form-control" id="quantity" placeholder="Enter Product Quantity !" required value="0">
+      <input name="quantity" type="text" class="form-control" id="quantity" placeholder="Enter Product Quantity !" required value="0">
     </div>
     <label for="quantity" class="col-sm-2 col-form-label text-left">/ Unit </label>    
   </div> 
-</div>
-<?php } ?>                
+</div>           
 <!------>      
   </div>
 </div>
@@ -187,10 +185,27 @@
                         <label for="product_code">Product Code</label>
                         <input type="text" class="form-control" id="product_code" name="product_code" placeholder="Enter Product Code !" required>
                     </div>
+                    <hr/>
                     <div class="form-group">
-                        <label for="product_color">Product Color</label>
-                        <input type="text" class="form-control" id="product_color" name="product_color" placeholder="Enter Product Color !">
-                    </div>
+                        <label for="category">Select Category</label>
+                        <select name="cat_id" name="cat_id" class="form-control" id="category">
+                            <option value="Default">Select Category</option>
+                            <?php foreach($proCategoryArray as $catData){ ?>                          
+                            <option value="<?= $catData['id']; ?>"><?= $catData['title']; ?></option>
+                            <?php } ?>
+                          <option value="0">Default</option>
+                        </select>
+                    </div> 
+                    <hr/>
+                    <div class="form-group">
+                        <label for="level">Select Level</label>
+                        <select name="trend" name="trend" class="form-control" id="level">
+                            <option value="Default">Select Level</option>
+                            <?php foreach ($proLevelArray as $levelData) { ?> 
+                            <option value="<?= $levelData['title']; ?>"><?= $levelData['title']; ?></option>
+                            <?php } ?>                           
+                        </select>
+                    </div> 
                     <hr/>
                      <div class="form-group">
                         <label for="product_size">Product Size</label>
@@ -200,8 +215,22 @@
                           <label class="form-check-label" for="<?= $sizeData['size']; ?>Click"><?= $sizeData['title']; ?></label>
                         </div>
                         <?php } ?>
-
-                    </div> 
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label for="product_color">Product Color</label>
+                        <?php foreach ($proColorArray as $colorData) { ?> 
+                        <div class="form-check">
+                          <input type="checkbox"  id="<?= $colorData['title']; ?>Click" name="product_size[]" value="<?= $colorData['title']; ?>" data-trigger="size<?= $colorData['title']; ?>" class="trigger">
+                          <label class="form-check-label" for="<?= $colorData['title']; ?>Click"><?= $colorData['title']; ?></label>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <hr/>   
+                    <div class="form-group">
+                        <label for="tags">Tags (Use , separator)</label>
+                        <textarea name="tags" id="tags" class="form-control" placeholder="Tags !"></textarea>
+                    </div>                  
                     <hr/>
                     <div class="form-group">
                         <label for="thumb">Page Thumb</label>
@@ -218,31 +247,6 @@
                           </div>
                           <div class="upload__img-wrap"></div>
                         </div>
-                    </div> 
-
-
-                    <div class="form-group">
-                        <label for="template">Select Category</label>
-                        <select name="cat_id" name="cat_id" class="form-control" id="template">
-                            <option value="Default">Select Category</option>
-                            <?php foreach($proCategoryArray as $catData){ ?>                          
-                            <option value="<?= $catData['id']; ?>"><?= $catData['title']; ?></option>
-                            <?php } ?>
-                          <option value="0">Default</option>
-                        </select>
-                    </div> 
-                    <div class="form-group">
-                        <label for="template">Select Trend</label>
-                        <select name="trend" name="trend" class="form-control" id="template">
-                            <option value="0">Non Trend</option>
-                            <option value="1">Trend Top</option>                            
-                            <option value="2">Trend Bottom</option>                            
-                            <option value="3">3<sup>rd</sup> Grid</option>                            
-                        </select>
-                    </div>                   
-                    <div class="form-group">
-                        <label for="template">Tags</label>
-                        <textarea name="tags" class="form-control" placeholder="Tags !"></textarea>
                     </div>                    
                 </div>               
             </div>

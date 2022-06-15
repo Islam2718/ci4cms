@@ -1,0 +1,178 @@
+.info-table {
+  td {
+    border: none;
+    padding: 4px 0;
+    vertical-align: top;
+    
+    &:first-child {
+      color: #000000;
+      padding-right: 10px;
+    }
+  }
+
+  tr {
+    &:first-child {
+      td {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      td {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+.pro-tag {
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 9px;
+  padding-bottom: 25px;
+  font-size: 18px;
+  clip-path: polygon(100% 0, 100% 100%, 50% 80%, 0 100%, 0 50%, 0% 0%);
+
+  i {
+    display: block;
+    font-size: 20px;
+  }
+}
+
+.progress.style1 {
+  height: 8px;
+  border-radius: 50px;  
+}
+
+.bar-list,
+.progress.style1 {
+
+  .wins {
+    background-color: #36d344;
+  }
+
+  .draws {
+    background-color: #ededed;
+  }
+
+  .losses {
+    background-color: #fe0000;
+  }
+  
+}
+
+.bar-list {
+  margin-top: 5px;
+
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.post-time {
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  padding: 3px 14px;
+  font-size: 12px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 3;
+}
+
+.author-box {
+  line-height: 1;
+  
+  img {
+    @include equal-size(45px);
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@include lg {
+  .inner-img1 {
+    max-width: 180px;
+  }
+
+  .skill-box1.px-30.pb-30 {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+@include md {
+  .inner-img1 {
+    margin-right: 20px;
+  }
+
+  .skill-box1 {
+    .ml-lg-30 {
+      margin-left: 20px;
+    }
+  }
+
+  .bar-list li {
+    margin-right: 10px;
+  }
+}
+
+@include sm {
+  .inner-img1 {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .skill-box1 {
+    .ml-lg-30 {
+      margin-left: 20px;
+    }
+  }
+
+  .info-table {
+    font-size: 14px;
+  }
+}
+
+@include xs {
+
+  .skill-box1 {
+    .ml-lg-30 {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+
+  .info-table td {
+    padding: 0;
+    font-size: 14px;
+
+    &:first-child {
+      padding-right: 5px;
+    }
+  }
+}

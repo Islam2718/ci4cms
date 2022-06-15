@@ -1,0 +1,131 @@
+:root {
+  --title-color       : #000000;
+  --body-color        : #7c7e90;
+  --light-color       : #9b9b9b;
+  --secondary-color   : #f9f9f9;
+  --smoke-color       : #f8f8f8;
+  --dark-color        : #0b0c10;
+  --light-gray-color  : #171920;
+  --light-dark-color  : #0f1116;
+  --mist-blue-color   : #686d7c;
+  --white-color       : #ffffff;
+  --black-color       : #000000;
+  --yellow-color      : #fec624;
+  --success-color     : #28a745;
+  --error-color       : #dc3545;
+  --orange-color      : #f07707;
+  --border-color      : rgba(0,0,0,0.10);
+  --theme-font        : 'DM Sans', sans-serif;
+  --theme-font2       : 'Montserrat',sans-serif;
+  --theme-font3       : 'Roboto', sans-serif;
+  --icon-font         : 'Font Awesome 5 Pro';
+  --ripple-ani-duration: 3s;
+  --bs-gutter-x: 15px;
+  --bs-gradient: linear-gradient(to right, rgba(var(--theme-color2), 1) 0%, rgba(var(--theme-color), 1) 100%);
+}
+
+
+// Color Variation
+$theme-color          : rgba(var(--theme-color), 1); // Variable From theme-color.scss
+$theme-color-opacity  : var(--theme-color);  // Variable From theme-color.scss
+$theme-color2         : rgba(var(--theme-color2), 1); // Variable From theme-color.scss
+$theme-color2-opacity : var(--theme-color2);  // Variable From theme-color.scss
+$theme-color3         : rgba(var(--theme-color3), 1); // Variable From theme-color.scss
+$theme-color3-opacity : var(--theme-color3);  // Variable From theme-color.scss
+$title-color          : var(--title-color);
+$body-color           : var(--body-color);
+$light-color          : var(--light-color);
+$secondary-color      : var(--smoke-color);
+$smoke-color          : var(--smoke-color);
+$dark-color           : var(--dark-color);
+$light-dark-color     : var(--light-dark-color);
+$light-gray-color     : var(--light-gray-color);
+$mist-blue-color      : var(--mist-blue-color);
+$white-color          : var(--white-color);
+$black-color          : var(--black-color);
+$yellow-color         : var(--yellow-color);
+$success-color        : var(--success-color);
+$error-color          : var(--error-color);
+$orange-color         : var(--orange-color);
+$border-color         : var(--border-color);
+$gradient             : var(--bs-gradient);
+
+
+// BG & Overlay Color Mapping 
+$colorsMap     : ();
+$colorsMap : map-merge((
+  "theme"       : $theme-color,
+  "theme2"      : $theme-color2,
+  "theme3"      : $theme-color3,
+  "title"       : $title-color,
+  "secondary"   : $secondary-color,
+  "smoke"       : $smoke-color,
+  "dark"        : $dark-color,
+  "light-dark"  : $light-dark-color,
+  "light-gray"  : $light-gray-color,
+  "white"       : $white-color,
+  "black"       : $black-color,
+),$colorsMap);
+  
+  
+// Text Color Mapping 
+$textColorsMap : ();
+$textColorsMap : map-merge((
+  "theme"      : $theme-color,
+  "theme2"     : $theme-color2,
+  "theme3"     : $theme-color3,
+  "title"      : $title-color,
+  "body"       : $body-color,
+  "light"      : $light-color,
+  "mist-blue"  : $mist-blue-color,
+  "white"      : $white-color,
+  "yellow"     : $yellow-color,
+  "success"    : $success-color,
+  "error"      : $error-color,
+  "orange"     : $orange-color
+),$textColorsMap);
+
+
+// Font Variation
+$theme-font  : var(--theme-font);
+$theme-font2 : var(--theme-font2);
+$theme-font3 : var(--theme-font3);
+$icon-font   : var(--icon-font);
+
+$body-font       : $theme-font;
+$title-font      : $theme-font2;
+$body-font-size  : 16px;
+$body-line-Height: 26px;
+$body-font-weight: 400;
+$p-line-Height   : 1.8;
+
+// Font Mapping 
+$fontsMap  : ();
+$fontsMap  : map-merge((
+  "theme"  : $theme-font,
+  "theme2" : $theme-font2,
+  "theme3" : $theme-font3,
+  "icon"   : $icon-font
+),$fontsMap);
+
+
+// Device Variation
+$xl: 1500px;
+$ml: 1300px;
+$lg: 1199px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+
+
+// Spacing Count with 5x
+$space-count: 20;
+
+
+// Section Space 
+$space : 120px;
+$space-medium: 90px;
+
+// Section Space md
+$space-md : 60px;
+$space-medium-md: 30px;

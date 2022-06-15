@@ -1,0 +1,283 @@
+/*
+Template Name: Zocker
+Template URL: http://vecurosoft.com/products/html/zocker
+Description: Zocker - eSports and Gaming HTML Template
+Author: Vecuro
+Author URI: https://themeforest.net/user/vecuro
+Version: 1.0.0
+*/
+/*=================================
+    CSS Index End
+==================================*/
+/*
+01. Variable
+02. Mixin
+03. Function
+04. Typography
+05. Bootstrap Overwrite
+    5.1. Container
+    5.2. Grid
+    5.3. Form
+    5.4. Select Box
+06. Vendor Custom Style
+    6.1. Slick Slider
+    6.2. VS Mobile Menu
+07. Theme Default
+    7.1. Preloader
+    7.2. Theme Buttons
+    7.3. Section Title
+    7.4. Theme Utility
+    7.5. Default Box
+08. Template Style
+    8.1. Widget
+    8.2. Header
+    8.3. Footer
+    8.4. Breadcumb
+    8.5. Popup Search
+    8.6. Popup Side Menu
+    8.7. Pagination
+    8.8. Blog
+    8.9. Comments
+    8.10. Hero Area
+    8.11. Video Area
+    8.12. Match
+    8.13. Tab & Filter Menu
+    8.14. Member
+    8.15. Contact
+    8.16. Product
+    8.16. Newsletter
+    8.17. About
+    8.18. Brand
+    8.19. Time Table
+    8.20. Testimonial
+    8.21. Post Thumb
+    8.22. Team
+    8.22. Tournament
+09. Theme Global
+    9.1. Font
+    9.2. Background
+    9.3. Text Color
+    9.4. Border Radius
+    9.5. Overlay
+10. Theme Animation
+11. Extend
+12. Spacing
+*/
+
+/*=================================
+    CSS Index End
+==================================*/
+
+
+/*=================================
+    01. Variable
+==================================*/
+@import 'variable/variable';
+
+
+/*=================================
+    02. Mixin
+==================================*/
+@import 'mixin/mixin';
+
+
+/*=================================
+    03. Function
+==================================*/
+@import 'function/function';
+
+
+/*=================================
+    04. Typography
+==================================*/
+@import 'typography/typography';
+
+
+/*=================================
+    05. Bootstrap Overwrite
+==================================*/
+/*------------------- 5.1. Container -------------------*/
+@import 'reset/container';
+
+/*------------------- 5.2. Grid -------------------*/
+@import 'reset/grid';
+
+/*------------------- 5.3. Form -------------------*/
+@import 'reset/form';
+
+/*------------------- 5.4. Select Box -------------------*/
+@import 'reset/select-box';
+
+/*=================================
+    06. Vendor Custom Style
+==================================*/
+
+/*------------------- 6.1. Slick Slider -------------------*/
+@import 'vendor/slick-slider';
+
+/*------------------- 6.2. VS Mobile Menu -------------------*/
+@import 'vendor/vsmenu';
+
+
+
+/*=================================
+    07. Theme Default
+==================================*/
+
+/*------------------- 7.1. Preloader -------------------*/
+@import 'theme-default/preloader';
+
+/*------------------- 7.2. Theme Buttons -------------------*/
+@import 'theme-default/theme-btn';
+
+/*------------------- 7.3. Section Title -------------------*/
+@import 'theme-default/section-title';
+
+/*------------------- 7.4. Theme Utility -------------------*/
+@import 'theme-default/theme-utility';
+
+/*------------------- 7.5. Default Box -------------------*/
+@import 'theme-default/default-box';
+
+
+
+/*=================================
+    08. Template Style
+==================================*/
+/*------------------- 8.1. Widget  -------------------*/
+@import 'template/widgets/widget-sidebar';
+@import 'template/widgets/widget-footer';
+@import 'template/widgets/widget-default-list';
+@import 'template/widgets/widget-search';
+@import 'template/widgets/widget-tagcloud';
+@import 'template/widgets/widget-price-filter';
+
+
+/*------------------- 8.2. Header  -------------------*/
+@import 'template/headers/header-default';
+@import 'template/headers/header-sticky';
+@import 'template/headers/header-v1';
+
+
+/*------------------- 8.3. Footer  -------------------*/
+@import 'template/footers/footer-v1';
+
+
+/*------------------- 8.4. Breadcumb  -------------------*/
+@import 'template/breadcumb/breadcumb-v1';
+
+
+/*------------------- 8.5. Popup Search  -------------------*/
+@import 'template/sections/popupsearch-v1';
+
+/*------------------- 8.6. Popup Side Menu  -------------------*/
+@import 'template/sections/sidemenu-v1';
+
+
+/*------------------- 8.7. Pagination  -------------------*/
+@import 'template/sections/pagination-v1';
+
+/*------------------- 8.8. Blog  -------------------*/
+@import 'template/sections/blog-default';
+@import 'template/sections/blog-v1';
+@import 'template/sections/blog-v2';
+@import 'template/sections/blog-single-v1';
+
+/*------------------- 8.9. Comments  -------------------*/
+@import 'template/sections/comments-v1';
+@import 'template/sections/comment-form-v1';
+
+/*------------------- 8.10. Hero Area  -------------------*/
+@import 'template/sections/hero-default';
+
+/*------------------- 8.11. Video Area  -------------------*/
+@import 'template/sections/video-v1';
+
+/*------------------- 8.12. Match  -------------------*/
+@import 'template/sections/match-v1';
+
+/*------------------- 8.13. Tab & Filter Menu  -------------------*/
+@import 'template/sections/filter-menu';
+@import 'template/sections/tab-menu';
+
+/*------------------- 8.14. Member  -------------------*/
+@import 'template/sections/member-v1';
+@import 'template/sections/member-v2';
+
+/*------------------- 8.15. Contact  -------------------*/
+@import 'template/sections/contact-v1';
+
+/*------------------- 8.16. Product  -------------------*/
+@import 'template/sections/product-v1';
+@import 'template/sections/product-v2';
+@import 'template/sections/product-details-v1';
+
+/*------------------- 8.16. Newsletter  -------------------*/
+@import 'template/sections/newsletter-v1';
+
+/*------------------- 8.17. About  -------------------*/
+@import 'template/sections/about-v1';
+
+/*------------------- 8.18. Brand  -------------------*/
+@import 'template/sections/brand';
+
+/*------------------- 8.19. Time Table  -------------------*/
+@import 'template/sections/timetable-v1';
+
+/*------------------- 8.20. Testimonial  -------------------*/
+@import 'template/sections/testimonial-v1';
+@import 'template/sections/testimonial-v2';
+
+/*------------------- 8.21. Post Thumb  -------------------*/
+@import 'template/sections/post-thumb-v1';
+
+/*------------------- 8.22. Team  -------------------*/
+@import 'template/sections/team-v1';
+@import 'template/sections/team-details-v1';
+
+/*------------------- 8.22. Tournament  -------------------*/
+@import 'template/sections/event-v1';
+
+/*------------------- 8.23. Counter  -------------------*/
+@import 'template/sections/counter-v1';
+
+
+/*=================================
+    09. Theme Global
+==================================*/
+/*------------------- 9.1. Font -------------------*/
+@import 'theme-global/font';
+
+/*------------------- 9.2. Background -------------------*/
+@import 'theme-global/background';
+
+/*------------------- 9.3. Text Color -------------------*/
+@import 'theme-global/text-color';
+
+/*------------------- 9.4. Border Radius -------------------*/
+@import 'theme-global/border-radius';
+
+/*------------------- 9.5. Overlay -------------------*/
+@import 'theme-global/overlay';
+
+
+
+/*=================================
+    10. Theme Animation
+==================================*/
+@import 'animation/animation';
+
+
+
+/*=================================
+    11. Extend
+==================================*/
+@import 'extend/extend';
+
+
+
+
+/*=================================
+    12. Spacing
+==================================*/
+@import 'spacing/spacing';

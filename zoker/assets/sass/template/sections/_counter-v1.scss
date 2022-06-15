@@ -1,0 +1,108 @@
+.counter-figure {
+  .sign,
+  .digit {
+    background-color: #252628;
+    color: $white-color;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: $title-font;
+    height: 80px;
+    width: 50px;
+    margin-right: 8px;
+    display: inline-block;
+    line-height: 80px;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 50%;
+      width: 100%;
+      background-color: $black-color;
+      opacity: 0.28;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .sign {
+    margin-right: 15px;
+  }
+}
+
+
+.counter-middle {
+  display: flex;
+  align-items: center;
+  
+  .text {
+    font-size: 18px;
+    font-family: $title-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 90px;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .cross {
+    margin-right: 20px;
+    font-size: 30px;
+    font-family: $title-font;
+    font-weight: 700;
+  }
+}
+
+
+@include md {
+  .counter-figure {
+    .sign,
+    .digit {
+      font-size: 24px;
+      height: 50px;
+      width: 35px;
+      margin-right: 8px;
+      line-height: 50px;
+    }
+
+  }
+  .counter-middle {
+
+    .cross {
+      margin-right: 15px;
+      font-size: 18px;
+    }
+
+    .text {
+      font-size: 12px;
+      max-width: 65px;
+    }
+  }
+
+}
+
+@include sm {
+  .counter-area {
+    text-align: center;
+  }
+
+  .counter-middle{ 
+    justify-content: center;
+  }
+
+  .counter-figure {
+    .sign,
+    .digit {
+      font-size: 18px;
+      height: 40px;
+      width: 30px;
+      margin-right: 4px;
+      line-height: 40px;
+    }
+  }
+}

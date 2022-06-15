@@ -1,0 +1,26 @@
+.brand-wrap1 {
+  max-width: 1024px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-79%);
+  padding: 60px 60px;
+  z-index: 41;
+}
+
+@include xl {
+  .brand-wrap1 {
+    position: static;
+    transform: translateY(0);
+    width: 100%;
+    max-width: 100%;
+    margin-top: 120px;
+  }
+}
+
+@include md {
+  .brand-wrap1 {
+    margin-top: 60px;
+    padding: 30px;
+  }
+}

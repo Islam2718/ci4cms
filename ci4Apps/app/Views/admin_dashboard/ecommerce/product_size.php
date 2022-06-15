@@ -102,14 +102,6 @@
                 </div>
             </div>
         </div>
-        <!-- Pie Chart -->
-        <div class="col-xl-2 col-lg-2">
-            <div class="sidebar-card bg-dark text-center mt-4 mt-4 pt-4 pb-4">
-                <img class="sidebar-card-illustration mb-2 p-4" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>Aveen Pro</strong> <br>For<br> e-commerce</p>
-                <a class="btn btn-success btn-sm" href="#">Upgrade 2 Pro !</a>
-            </div>
-        </div>
     </div>
     <!-- Content Row -->
 </div>
@@ -123,7 +115,7 @@
         <form action="<?= base_url('product-size'); ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exmodalsoc">Add Category</h5>
+                <h5 class="modal-title" id="exmodalsoc">Add Size</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>

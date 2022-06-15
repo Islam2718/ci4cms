@@ -1,0 +1,85 @@
+.vs-sidebox {
+  padding: 35px 40px 40px 40px;
+  margin-bottom: 30px;
+
+  .vs-blog {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.vs-sidebox-v2 {
+  background-color: $smoke-color;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.sidebox-title-v2 {
+  position: relative;
+  font-family: $body-font;
+  margin-bottom: 0;
+  padding: 20px 30px;
+  color: $white-color;
+
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+    background-image: $gradient;
+  }
+
+
+  &:before {
+    height: 100%;
+    width: auto;
+    min-width: 240px;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+  }
+
+}
+
+.vs-box1 {
+  border: 1px solid #f0f0f0;
+  padding: 30px;
+  position: relative;
+}
+
+.sidebox-title {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #262932;
+
+  &:before {
+    content: '--';
+    position: relative;
+    margin-right: 10px;
+    display: inline-block;
+    color: $yellow-color;
+  }
+}
+
+@include lg {
+  .vs-sidebox-v2,
+  .vs-sidebox {
+    padding: 17px 20px 20px 20px;
+    margin-bottom: 30px;
+  }
+
+  .sidebox-title-v2 {
+    padding: 15px 20px;
+  }
+
+  .vs-box1 {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,138 @@
+.newsletter-pb {
+  padding-bottom: 180px;
+}
+
+.newsletter-medium-pb {
+  padding-bottom: 100px;
+}
+
+.newsletter-style2,
+.newsletter-style1 {
+  .form-control {
+    width: 100%;
+    height: 50px;
+    border: none;
+    margin-right: -10px;
+    color: $white-color;
+    background-color: $light-dark-color;
+  }
+
+  .gradient-btn {
+    margin-left: -10px;
+  }
+}
+
+.newsletter-style2 {
+  .form-control {
+    margin-right: -2px;
+    background-color: #14161c;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.05);
+  }
+  .vs-btn {
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: $theme-font3;
+    font-size: 14px;
+  }
+}
+
+.sidebox-newsletter {
+  
+  .form-control {
+    background-color: rgba($color: #000000, $alpha: 0.40);
+    border: none;
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: $white-color;
+    
+    @include inputPlaceholder {
+      color: #7c7c7c;
+    }
+  }
+  
+  button {
+    width: 100%;
+    border: none;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    font-size: 14px;
+    font-family: $theme-font3;
+    background-color: #34ba5e;
+    color: $white-color;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: darken($color: #34ba5e, $amount: 10%);
+    }
+  }
+}
+
+
+@include lg {
+  .newsletter-pb {
+    padding-bottom: 90px;
+  }
+  .newsletter-medium-pb {
+    padding-bottom: 30px;
+  }
+
+  .vs-newsletter-wrapper {
+    .position-absolute {
+      position: static !important;
+      transform: none !important;
+    }
+    
+    .px-50 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .py-50 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@include md {
+  .newsletter-pb {
+    padding-bottom: 30px;
+  }
+}
+
+
+
+@include sm {
+  .newsletter-style1 {
+    text-align: center;
+    
+    .gradient-btn {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+
+  .newsletter-medium-pb {
+    padding-bottom: 120px;
+  }
+
+  .vs-newsletter-wrapper {
+    .py-40 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    img.align-middle.me-2 {
+      max-width: 30px;
+    }
+
+    .px-60 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

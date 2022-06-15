@@ -1,0 +1,386 @@
+.exp-box1 {
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+  background-color: $white-color;
+  padding: 35px 0;
+  padding-left: 40px;
+  width: 225px;
+  z-index: 4;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background-image: $gradient;
+  }
+  
+  .counter {
+    line-height: 1;
+  }
+
+  .exp-text {
+    color: $black-color;
+  }
+}
+
+.about-list {
+  li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 3px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: '\f30b';
+      font-family: $icon-font;
+      position: absolute;
+      left: 0;
+      font-weight: 300;
+    }
+  }
+}
+
+
+.img-box1 {
+  position: relative;
+  .exp-box1 {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+  }
+
+  &:hover {
+    img {
+      transform: none;
+    }
+  }
+}
+
+.img-box2 {
+  overflow: visible;
+  z-index: 2;
+
+  .shape1,
+  .shape2 {
+    z-index: -1;
+  }
+  &:hover {
+    img {
+      transform: none;
+    }
+  }
+    .shape2 {
+    bottom: -60px;
+    right: -30px;
+  }
+}
+
+
+.viping-shape {
+  padding-bottom: 45px;
+  --clip-size: 150px;
+  display: inline-block; 
+
+  img {
+    position: relative;
+    z-index: 3;
+    
+    clip-path: polygon(calc(0% + var(--clip-size)) 0%, calc(100% - var(--clip-size)) 0%, 100% 50%, calc(100% - var(--clip-size)) 100%, calc(0% + var(--clip-size)) 100%, 0% 50%);
+  }
+
+  .play-btn {
+    z-index: 4;
+    margin-top: calc(45px / -2);
+  }
+
+  [class*=shape-] {
+    z-index: 1;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    transition: all ease 0.4s;
+    top: 0;
+  }
+
+  .shape-bottom,
+  .shape-top {
+    height: 5px;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba($theme-color3-opacity, 0.3) 30%, rgba($theme-color3-opacity, 1) 50%, rgba($theme-color3-opacity, 0.3) 70%,rgba(0, 0, 0, 0) 100%);
+    animation: vippingTopBar 2.4s linear infinite;
+
+    &.shape2 {
+      animation-delay: 0.8s;
+    }
+
+    &.shape3 {
+      animation-delay: 1.6s;
+    }
+  }
+
+  .shape-bottom {
+    top: auto;
+    bottom: 45px;
+    animation-name: vippingBottomBar;
+  }
+
+
+  .shape-right,
+  .shape-left {
+    left: 0;
+    width: 132px;
+    height: 100%;
+    animation: vippingLeftBar 2.4s linear infinite;
+    
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 53%;
+      width: 6px;
+      background-image: linear-gradient(to top, rgba($theme-color3-opacity, 1) 0%, rgba($theme-color3-opacity, 0.3) 20%,rgba(0,0,0,0) 100%);
+      transform: rotate(30deg);
+      transform-origin: 74px calc(100% - 17px);
+    }
+    
+    &:after {
+      background-image: linear-gradient(to bottom, rgba($theme-color3-opacity, 1) 0%, rgba($theme-color3-opacity, 0.3) 20%, rgba(0, 0, 0, 0) 100%);
+      top: auto;
+      bottom: 0;
+      transform: rotate(-30deg);
+      transform-origin: calc(100% - 13px) -4px;
+    }
+
+    &.shape2 {
+      animation-delay: 0.8s;
+    }
+
+    &.shape3 {
+      animation-delay: 1.6s;
+    }
+  }
+
+
+  .shape-right {
+    animation: vippingRightBar 2.4s linear infinite;
+    left: auto;
+    right: 0;
+    opacity: 0;
+
+    &:after,
+    &:before {
+      transform: rotate(-30deg);
+      transform-origin: calc(100% - 1px) 15px;
+    } 
+    
+    &:after {
+      transform: rotate(30deg);
+      transform-origin: 82px calc(100% - 35px);
+    }
+  }
+  
+}
+
+
+@keyframes vippingTopBar {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  50% {
+    opacity: 0.7;
+    transform: translateY(-35px);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+}
+
+@keyframes vippingBottomBar {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  50% {
+    opacity: 0.7;
+    transform: translateY(35px);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+}
+
+@keyframes vippingLeftBar {
+  0% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  
+  50% {
+    opacity: 0.7;
+    transform: translateX(-30px);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateX(-60px) ;
+  }
+}
+
+@keyframes vippingRightBar {
+  0% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  
+  50% {
+    opacity: 0.7;
+    transform: translateX(30px);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateX(60px) ;
+  }
+}
+
+
+
+
+@include xl {
+  .vs-about-wrapper.pt-165 {
+    padding-top: 120px;
+  }
+
+  .about-content1 {
+    &.pl-35 {
+      padding-left: 0;
+    }
+  }
+}
+
+
+@include lg {
+  .img-box1 {
+    .exp-box1 {
+      width: 176px;
+      padding: 10px;
+      bottom: 13%;
+    }
+  }
+}
+
+@include md {
+  .vs-about-wrapper.pt-165 {
+    padding-top: 60px;
+  }
+  
+  .img-box1 {
+    .exp-box1 {
+      width: 40%;
+      padding: 7% 2%;
+      top: 0;
+      bottom: auto;
+      left: 0;
+      right: auto;
+    }
+  }
+
+  .about-content1 {
+    p.mb-30 {
+      margin-bottom: 15px;
+    }
+  }
+
+  .img-box2 {
+    overflow: hidden;
+    .ml-15 {
+      margin-left: 0;
+    }
+
+    .shape2 {
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  .viping-shape {
+    &.mb-60 {
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    
+    .shape-left {   
+      &:before {
+        transform: rotate(35deg);
+        transform-origin: 55px calc(100% - 39px);
+      }
+      &::after {
+        transform: rotate(-34deg);
+        transform-origin: calc(100% - 27px) 18px;
+      }
+    }
+
+    .shape-right {
+      &:before {
+        transform: rotate(-36deg);
+        transform-origin: calc(100% + 17px) 19px;
+      }
+
+      &:after {
+        transform: rotate(35deg);
+        transform-origin: 80px calc(100% - 35px);
+      }
+    }
+  }
+}
+
+
+@include sm {
+  .img-box1 {
+    .exp-box1 {
+      position: relative;
+      width: auto;
+      padding: 20px;
+      padding-bottom: 0;
+      margin-top: 20px;
+      box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.10);
+    }
+  }
+
+  .viping-shape {
+    margin-bottom: 0;
+    max-width: auto;
+    padding-bottom: 30px;
+    --clip-size: 0;
+
+    &.mb-60 {
+      margin-bottom: 0;
+    }
+
+    .play-btn {
+      margin-top: -15px;
+    }
+
+    [class*="shape-"] {
+      display: none;
+    }
+  }
+}

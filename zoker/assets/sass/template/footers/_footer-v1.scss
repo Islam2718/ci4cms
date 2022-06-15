@@ -1,0 +1,159 @@
+.dark-style1 {
+  &,
+  *:not([class*='text']) {
+    color: #c8cacf;
+
+    a:hover {
+      color: $theme-color;
+    }
+  }
+
+  .widget_title,
+  .icon-btn1 i {
+    color: $white-color;
+  }
+}
+
+.footer-layout1 {
+  .bg-fluid {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+  }
+}
+
+
+.vs-widget-about {
+  .about-text {
+    font-size: 16px;
+    line-height: 32px;
+    color: #c8cacf;
+  }
+}
+
+.contact-info {
+  padding-left: 30px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+}
+
+.footer-menu {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #9599a3;
+    font-weight: 700;
+    padding: 38px 27px;
+    line-height: 1;
+    background-color: transparent;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: $gradient;
+      height: 4px;
+      width: 0;
+      transition: all ease 0.4s;
+    }
+
+    &:hover {
+      background-color: #161920;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+
+  &.style2 {
+    a {
+      &:after {
+        background-image: none;
+        background-color: $theme-color3;
+      }
+    }
+  }
+}
+
+.footer-layout1 {
+  .footer-widget-wrapper {
+    padding-top: 185px;
+    padding-bottom: 70px;
+  }
+}
+
+.footer-layout2 {
+  .footer-widget-wrapper {
+    padding-top: 130px;
+    padding-bottom: 30px;
+  }
+}
+
+.footer-layout3 {
+  background-color: #171a21;
+  .footer-widget-wrapper {
+    padding-top: 118px;
+    padding-bottom: 60px;
+  }
+}
+
+
+
+.copyright-shape {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  clip-path: polygon(4% 0, 96% 0, 100% 100%, 0% 100%);
+}
+
+
+@include lg  {
+  .footer-layout1 {
+    .footer-widget-wrapper {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+  }
+
+  .footer-layout2 {
+    .footer-widget-wrapper {
+      padding-top: 60px;
+      padding-bottom: 30px;
+    }
+  }
+
+}
+
+@include md  {
+  .footer-layout3,
+  .footer-layout1 {
+    .footer-widget-wrapper {
+      padding-top: 58px;
+      padding-bottom: 20px;
+    }
+  }
+
+}

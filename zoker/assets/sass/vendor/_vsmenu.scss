@@ -1,0 +1,152 @@
+.vs-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.60);
+  z-index: 999999;
+  width: 0;
+  height: 100%;
+  transition: all ease 0.8s;
+
+
+  // Mobile Menu Logo
+  .mobile-logo {
+    max-width: 140px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  // Menu Close Button
+  .vs-menu-toggle {
+    background-color: transparent;
+    background-image: $gradient;
+    border: none;
+    font-size: 22px;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    padding: 0;
+    line-height: 1;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    z-index: 1;
+    color: $white-color;
+    border-radius: 50%;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  .vs-menu-area {
+    width: 100%;
+    max-width: 300px;
+    background-color: $white-color;
+    height: 100%;
+    position: relative;
+    left: -1000px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 1s;
+
+    @include xs {
+      max-width: 280px;
+    }
+  }
+
+  &.vs-body-visible {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    transition: all ease 0.8s;
+
+    .vs-menu-area {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      transition: all ease 1s;
+    }
+  }
+}
+
+
+// Mobile Menu
+.vs-mobile-menu {
+  overflow-y: scroll;
+  max-height: 58vh;
+  padding-bottom: 40px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid #1e222a;
+      list-style-type: none;
+
+      &:first-child {
+        border-top: 1px solid #1e222a;
+      }
+
+      a {
+        display: block;
+        position: relative;
+        padding: 12px 15px;
+        line-height: 1;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $light-color;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+
+      ul {
+        li {
+          padding-left: 12px;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .vs-item-has-children {
+      >a {
+        &:after {
+          content: '\f067';
+          font-family: $icon-font;
+          font-weight: 300;
+          float: right;
+          padding-right: 10px;
+        }
+      }
+
+      &.vs-active {
+        >a {
+          &:after {
+            content: '\f068';
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.vs-menu-toggle {
+  border: 1px dashed ;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: transparent;
+  font-size: 28px;
+}

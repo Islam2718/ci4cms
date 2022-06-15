@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/ci4cms/';
+    public $baseURL = 'http://localhost/castle_gaming/';
 
     /**
      * --------------------------------------------------------------------------

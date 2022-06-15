@@ -1,0 +1,143 @@
+.quantity-box {
+
+  input,
+  button {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    line-height: 50px;
+    color: $title-color;
+    background-color: $smoke-color;
+  }
+
+  input {
+    color: $white-color;
+    background-image: $gradient;
+  }
+}
+
+
+.product-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 4px;
+
+    &:before {
+      content: '\f00c';
+      font-family: $icon-font;
+      color: $theme-color2;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+
+.product-about {
+  background-color: $white-color;
+  padding: 55px 60px 60px 60px;
+  box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.05);
+}
+
+.product-details-shape {
+  position: absolute;
+  // background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  max-width: 870px;
+}
+
+
+.product-thum-slide {
+  width: 100%;
+  max-width: 270px;
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  display: inline-block;
+
+  .thumb {
+    cursor: pointer;
+  }
+
+
+  .slide-btn {
+    position: absolute;
+    width: 30px;
+    top: 0;
+    right: -35px;
+
+    button {
+      width: 100%;
+      height: 35px;
+      display: inline-block;
+      border: none;
+      background-color: $white-color;
+    }
+  }
+}
+
+.product-share {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+
+@include lg {
+  .product-about {
+    padding: 25px 30px 30px 30px;
+
+    .product-list.mb-35 {
+      margin-bottom: 20px;
+    }
+
+    .border-dashed-light.mt-25.mb-20 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .product-details-shape {
+    max-width: 720px;
+  }
+
+  .product-thum-slide {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .product-share {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+}
+
+
+
+@include xs {
+  .product-share {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+
+  .product-about {
+    padding: 25px 20px 30px 20px;
+  }
+}

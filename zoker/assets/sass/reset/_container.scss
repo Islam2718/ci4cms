@@ -1,0 +1,27 @@
+@media only screen and (min-width: 1200px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container {
+    max-width: 1200px;
+  }
+}
+
+
+@media only screen and (max-width: 1600px) {
+  .container-fluid.px-0 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+
+.vs-container {
+  max-width: 1650px;
+}

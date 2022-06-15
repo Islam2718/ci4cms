@@ -1,0 +1,33 @@
+.widget {
+  .search-form {
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 60px;
+      background-color: $smoke-color;
+      border: none;
+      color: $body-color;
+      padding-left: 20px;
+
+      @include inputPlaceholder {
+        color: $body-color;
+      }
+    }
+
+    button {
+      padding: 0;
+      border: 1px solid transparent;
+      color: $body-color;
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+}

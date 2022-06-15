@@ -1,0 +1,48 @@
+.testimonial-layout1 {
+  .testi-text {
+    font-weight: 500;
+    text-transform: none;
+    font-family: $body-font;
+  }
+}
+
+
+.avater-slide1 {
+  max-width: 385px;
+  margin: 0 auto;
+
+  .avater {
+    transform: scale(0.6);
+    transition: all ease 0.4s;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &.slick-center {
+      transform: scale(1);
+    }
+  }
+}
+
+
+.testimonial-layout1 {
+  .author-area {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 60px;
+      bottom: 0;
+      background-color: $secondary-color;
+    }
+  }
+}

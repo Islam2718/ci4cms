@@ -1,0 +1,30 @@
+.select-box1 {
+  font-weight: 700;
+  &:after {
+    content: '\f107';
+    border: none;
+    font-family: $icon-font;
+    vertical-align: -0.5px;
+  }
+}
+
+
+.form-select-lg {
+  padding: 13px 30px;
+  font-size: 16px;
+  border-radius: 0;
+  color: $body-color;
+  border-color: #f0f0f0;
+  background-position: right 20px center;
+  cursor: pointer;
+
+  option {
+    cursor: pointer;
+  }
+  
+  &:focus {
+    border-color: #f0f0f0;
+    outline: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,80 @@
+.filter-menu-style1 {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 0 5px;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 6px;
+    bottom: 0;
+    right: 6px;
+    background-color: #171a21;
+    transform: skewX(20deg);
+    z-index: -1;
+  }
+
+  a,
+  button {
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    color: #9aa2b2;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 2;
+    display: inline-block;
+
+    &.active {
+      color: $white-color;
+    }
+  }
+  
+  
+  .indicator {
+    background-image: $gradient;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: skewX(20deg);
+    z-index: 1;
+    transition: all ease 0.3s;
+  }
+
+
+  &.btn-style2 {
+    .indicator {
+      background-color: $theme-color3;
+      background-image: none;
+    }
+  }
+}
+
+
+@include md {
+  .filter-menu-style1 {
+    &.mb-70 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@include sm {
+  .filter-menu-style1 {
+    &::before {
+      transform: none;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    .indicator {
+      transform: none;
+    }
+  }
+}

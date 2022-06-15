@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2022 at 10:18 AM
+-- Generation Time: Apr 27, 2022 at 12:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -490,8 +490,8 @@ CREATE TABLE `tbl_slider` (
 --
 
 INSERT INTO `tbl_slider` (`id`, `type`, `title`, `content`, `thumb`, `link_url`, `meta_key`, `meta_des`, `meta_schema`, `status`, `created_at`, `updated_at`) VALUES
-(22, 'thumb', 'slider 01 ', 'slider 01 ', 'slider_1648054567_slider1.jpg', 'slider 01 ', 'slider 01 ', 'slider 01 ', '', 0, '2022-03-23 16:56:07', '0000-00-00 00:00:00'),
-(24, 'thumb', 'slider 03  ', 'slider 02', 'slider_1648054552_slider2.jpg', 'slider 02', 'slider 02', 'slider 02', '', 0, '2022-03-23 16:55:52', '0000-00-00 00:00:00');
+(26, 'thumb', '1', '', 'slider_1651047887_123 (3).jpg', '', '', '', '', 0, '2022-04-27 08:24:47', '0000-00-00 00:00:00'),
+(27, 'thumb', '2', '', 'slider_1651047908_123 (4).jpg', '', '', '', '', 0, '2022-04-27 08:25:08', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -956,7 +956,7 @@ ALTER TABLE `tbl_siteinfo`
 -- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `tbl_social`

@@ -1,0 +1,34 @@
+@each $textColorsMap, $value in $textColorsMap {
+  .text-#{$textColorsMap} {
+    color: #{$value} !important;
+  }
+}
+
+.text-gradient {
+  background-image: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-on-dark1 {
+  color: #8c919b;
+  line-height: 26px;
+}
+
+.text-light2 {
+  color: #a2a3b0;
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.text-theme-hover:hover {
+  color: $theme-color2;
+}
+
+.text-light-white {
+  color: #dadada;
+}

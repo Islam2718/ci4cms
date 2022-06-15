@@ -1,0 +1,36 @@
+.sticky-header-wrap {
+  background-color: $white-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.1);
+  transition: all ease 0.4s;
+  transform: translateY(-110%);
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+  }
+
+}
+
+
+.menu-sticky1 {
+  >ul {
+    >li {
+      margin: 0 17px;
+
+      >a {
+        padding: 27px 0;
+        color: #a0a3ac;
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.breadcumb-menu-style1 {
+  max-width: 100%;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    margin: 0 6px;
+    list-style: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: '/';
+      position: relative;
+      right: -7px;
+      float: right;
+    }
+  }
+
+  li,
+  a,
+  span {
+    white-space: normal;
+    word-break: break-all;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  &[class*=text-] {
+    a {
+      color: inherit;
+    }
+  }
+}
+
+
+.breadcumb-layout1 {
+  &::before {
+    background-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.90) 0%,
+    rgba(0, 0, 0, 0.90) 30%, 
+    rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+
+.breadcumb-bg-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 0.7;
+  text-align: center;
+  margin: 0;
+  z-index: -1;
+  font-size: 12.5rem;
+  letter-spacing: -0.047em;
+  font-style: italic;
+  background-color: transparent;
+  color: rgba(0,0,0,0);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba($color: #fff, $alpha: 0.20);
+  filter: brightness(200%);
+  opacity: 1;
+}
+
+
+
+@include lg {
+  .breadcumb-wrapper {
+    &.pt-200 {
+      padding-top: 185px;
+    }
+  }
+
+  .breadcumb-bg-title {
+    font-size: 7.5rem;
+  }
+}
+
+@include md {
+  .breadcumb-wrapper {
+    &.pt-200 {
+      padding-top: 155px;
+    }
+  }
+
+  .breadcumb-bg-title {
+    font-size: 5.5rem;
+  }
+}
+
+@include sm {
+  .breadcumb-wrapper {
+    &.pt-200 {
+      padding-top: 115px;
+    }
+  }
+}
+
+@include xs {
+  .breadcumb-wrapper {
+    &.pt-200 {
+      padding-top: 108px;
+    }
+  }
+  
+  .breadcumb-bg-title {
+    font-size: 3.5rem;
+  }
+
+  .breadcumb-title.h1 {
+    font-size: 24px;
+  }
+}

@@ -33,7 +33,15 @@ $val = ['filter'=>'auth'];
 $notVal = ['filter'=>'noauth']; 
 
 /*| FRONT-END ROUTINGS... |*/
-$routes->get('/', 'HomeController::index',$notVal);
+$routes->match(['get','post'],'/', 'HomeController::index');
+$routes->match(['get','post'],'tournaments', 'HomeController::tournaments');
+$routes->match(['get','post'],'players', 'HomeController::players');
+$routes->match(['get','post'],'teams', 'HomeController::teams');
+// $routes->match(['get','post'],'rankings', 'HomeController::rankings',$notVal);
+$routes->match(['get','post'],'blog', 'HomeController::blogs');
+$routes->match(['get','post'],'blog-details/(:any)', 'HomeController::blogsDetails/$1');
+$routes->match(['get','post'],'shop', 'HomeController::shops',$notVal);
+$routes->match(['get','post'],'product-details/(:any)', 'HomeController::product_details/$1');
 
 /* |USERS ROUTINGS| */
 $routes->match(['get','post'],'admin-login', 'UserController::UserLoginMethod',$notVal);
@@ -43,6 +51,13 @@ $routes->match(['get','post'],'password-forgot', 'UserController::ForgotPassword
 $routes->match(['get','post'],'set-password/(:any)', 'UserController::SetNewPasswordMethod/$1');
 
 //back
+
+/*WALLET */
+$routes->match(['get','post'],'wallet-expence', 'WalletController::expenceMethod',$val);
+$routes->match(['get','post'],'wallet-income', 'WalletController::incomeMethod',$val);
+$routes->match(['get','post'],'wallet-report', 'WalletController::walletReportMethod',$val);
+
+
 /*USER MANAGEMENT SYSTEM*/
 $routes->match(['get','post'],'users', 'UserController::UsersMethod',$val);
 $routes->match(['get','post'],'user-add', 'UserController::UserAddMethod',$val);
@@ -93,9 +108,18 @@ $routes->match(['get','post'],'Slider-delete/(:any)', 'SiteinfoController::slide
 /*---eCommerce System---*/
 $routes->match(['get','post'],'dashboard-sale', 'EcommerceController::SalesMethod',$val);
 
+//CATEGORY//
 $routes->match(['get','post'],'product-category', 'EcommerceController::ProductCategoryMethod',$val);
 $routes->match(['get','post'],'product-cat-delete/(:any)', 'EcommerceController::ProductCatDeleteMethod/$1/$2',$val);
 $routes->match(['get','post'],'product-cat-edit/(:any)', 'EcommerceController::ProductCatEditMethod/$1/$2',$val);
+//LEVEL//
+$routes->match(['get','post'],'product-level', 'EcommerceController::ProductLevelMethod',$val);
+$routes->match(['get','post'],'product-level-delete/(:any)', 'EcommerceController::ProductLevelDeleteMethod/$1',$val);
+$routes->match(['get','post'],'product-level-edit/(:any)', 'EcommerceController::ProductLevelEditMethod/$1',$val);
+//COLOR//
+$routes->match(['get','post'],'product-color', 'EcommerceController::ProductColorMethod',$val);
+$routes->match(['get','post'],'product-color-delete/(:any)', 'EcommerceController::ProductColorDeleteMethod/$1',$val);
+$routes->match(['get','post'],'product-color-edit/(:any)', 'EcommerceController::ProductColorEditMethod/$1',$val);
 
 $routes->match(['get','post'],'product-size', 'EcommerceController::ProductSizeMethod',$val);
 $routes->match(['get','post'],'product-size-delete/(:any)', 'EcommerceController::ProductSizeDeleteMethod/$1/$2',$val);

@@ -3,6 +3,9 @@ namespace App\Controllers;
 
 use App\Models\SiteinfoModel; 
 use App\Models\ProductCategoryModel;
+use App\Models\ProductLevelModel;
+use App\Models\ProductColorModel;
+
 use App\Models\ProductsizeModel;
 use App\Models\ProductModel;
 use App\Models\StoreModel;
@@ -18,7 +21,14 @@ class EcommerceController extends BaseController
         return view('welcome_message');
     }
 
-    /* | PAGE LIST FORM | */
+
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
+/* | PRODUCT CATEGORY | */
     public function ProductCategoryMethod()
     {
         $siteinfoModel = new SiteinfoModel();
@@ -117,6 +127,166 @@ class EcommerceController extends BaseController
         }
     }
 
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
+/* | PRODUCT LEVEL METHODS.. | */
+    public function ProductLevelMethod()
+    {
+        $siteinfoModel = new SiteinfoModel();
+        $productLevelModel = new ProductLevelModel();
+
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                'title'    => 'required',
+            ];
+
+            if(! $this->validate($rules)){
+                $data['validation'] = $this->validator; 
+                return redirect()->to('product-level');
+            }else{
+                $newData = [
+                    'title'     => $this->request->getVar('title'),
+                    'description' => $this->request->getVar('description'),
+                    // 'meta_key'  => $this->request->getVar('meta_key'),
+                    // 'meta_des'  => $this->request->getVar('meta_des'),
+                ]; 
+
+                if($productLevelModel->save($newData)){
+                    return redirect()->to('product-level');
+                }
+            }
+        }
+
+        // //page load...
+        $data = array(
+            'activeMenu' => 'Product',
+            'siteInfo' => $siteinfoModel->where('id',1)->first(), 
+            'productLevelArray'=> $productLevelModel->orderBy('id','DESC')->findAll(), 
+        ); 
+
+        echo view('admin_dashboard/common/header',$data); 
+        echo view('admin_dashboard/ecommerce/product_level',$data);  
+        echo view('admin_dashboard/common/footer',$data); 
+    }
+
+    public function ProductLevelDeleteMethod($id){
+        $productLevelModel = new ProductLevelModel();
+        $productLevelModel->where('id',$id)->delete();      
+        return redirect()->to(base_url('product-level'));
+    }//end of level delete...
+
+    public function ProductLevelEditMethod($id){
+        $productLevelModel = new ProductLevelModel();
+
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                'title'    => 'required',
+            ];
+
+            if(! $this->validate($rules)){
+                $data['validation'] = $this->validator; 
+                return redirect()->to('product-level');
+            }else{                
+                $newData = [
+                    'title'     => $this->request->getVar('title'),
+                    'description'   => $this->request->getVar('description'),
+                    // 'meta_key'  => $this->request->getVar('meta_key'),
+                    // 'meta_des'  => $this->request->getVar('meta_des'),
+                ]; 
+
+                if($productLevelModel->where('id', $id)->set($newData)->update()){
+                    return redirect()->to('product-level');
+                }
+            }
+        }
+    }//end of level 
+
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
+/* | PRODUCT LEVEL METHODS.. | */
+    public function ProductColorMethod()
+    {
+        $siteinfoModel = new SiteinfoModel();
+        $productColorModel = new ProductColorModel();
+
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                'title'    => 'required',
+            ];
+
+            if(! $this->validate($rules)){
+                $data['validation'] = $this->validator; 
+                return redirect()->to('product-level');
+            }else{
+                $newData = [
+                    'title'     => $this->request->getVar('title'),
+                    'description' => $this->request->getVar('description'),
+                    // 'meta_key'  => $this->request->getVar('meta_key'),
+                    // 'meta_des'  => $this->request->getVar('meta_des'),
+                ]; 
+
+                if($productColorModel->save($newData)){
+                    return redirect()->to('product-color');
+                }
+            }
+        }
+
+        // //page load...
+        $data = array(
+            'activeMenu' => 'Product',
+            'siteInfo' => $siteinfoModel->where('id',1)->first(), 
+            'productColorArray'=> $productColorModel->orderBy('id','DESC')->findAll(), 
+        ); 
+
+        echo view('admin_dashboard/common/header',$data); 
+        echo view('admin_dashboard/ecommerce/product_color',$data);  
+        echo view('admin_dashboard/common/footer',$data); 
+    }
+
+    public function ProductColorDeleteMethod($id){
+        $productColorModel = new ProductColorModel();
+        $productColorModel->where('id',$id)->delete();      
+        return redirect()->to(base_url('product-color'));
+    }//end of color delete...
+
+    public function ProductColorEditMethod($id){
+        $productColorModel = new ProductColorModel();
+
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                'title'    => 'required',
+            ];
+
+            if(! $this->validate($rules)){
+                $data['validation'] = $this->validator; 
+                return redirect()->to('product-color');
+            }else{                
+                $newData = [
+                    'title'     => $this->request->getVar('title'),
+                    'description'   => $this->request->getVar('description'),
+                ]; 
+
+                if($productColorModel->where('id', $id)->set($newData)->update()){
+                    return redirect()->to('product-color');
+                }
+            }
+        }
+    }//end of color 
+
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
     /* | PRODUCT SIZE | */
     public function ProductSizeMethod()
     {
@@ -185,6 +355,12 @@ class EcommerceController extends BaseController
         }
     }
 
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
     public function ProductListMethod(){
         $siteinfoModel = new SiteinfoModel();
         
@@ -209,7 +385,10 @@ class EcommerceController extends BaseController
         
         /*PRODUCT*/
         $productCategoryModel = new ProductCategoryModel();
-        $productsizeModel = new ProductsizeModel();
+        $productLevelModel = new ProductLevelModel();
+        $productSizeModel = new ProductSizeModel();
+        $productColorModel = new ProductColorModel();
+
         $productModel = new ProductModel();
         $stockModel = new StockModel(); 
 
@@ -307,15 +486,18 @@ class EcommerceController extends BaseController
         $data = array(
             'activeMenu' => 'Product',
             'siteInfo' => $siteinfoModel->where('id',1)->first(), 
+
             'proCategoryArray'=> $productCategoryModel->orderBy('id','DESC')->findAll(), 
-            'proSizeArray'=> $productsizeModel->findAll(), 
+            'proLevelArray'=> $productLevelModel->orderBy('id','DESC')->findAll(), 
+            'proSizeArray'=> $productSizeModel->orderBy('id','DESC')->findAll(), 
+            'proColorArray'=> $productColorModel->orderBy('id','DESC')->findAll(),
+
         ); 
 
         echo view('admin_dashboard/common/header',$data); 
         echo view('admin_dashboard/ecommerce/product_add',$data);  
         echo view('admin_dashboard/common/footer',$data); 
     }
-
 
     public function ProductEditMethod($id){
         $siteinfoModel = new SiteinfoModel();
@@ -435,6 +617,12 @@ class EcommerceController extends BaseController
         return redirect()->to(base_url('product-list'));
     }//end of page delete...
 
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
     public function ordersSettingsMethod(){
         $siteinfoModel = new SiteinfoModel();
         $orderModel = new OrderModel();
@@ -468,6 +656,12 @@ class EcommerceController extends BaseController
         echo view('admin_dashboard/common/footer',$data); 
     }
 
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
     public function reportMethod(){
         $siteinfoModel = new SiteinfoModel();
         $orderModel = new OrderModel();
@@ -483,7 +677,13 @@ class EcommerceController extends BaseController
         echo view('admin_dashboard/ecommerce/reports',$data);  
         echo view('admin_dashboard/common/footer',$data); 
     }
-    
+
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/    
     public function ShippingChargeMethod(){
         $siteinfoModel = new SiteinfoModel();
         $shippingchargeModel = new ShippingchargeModel();
@@ -521,7 +721,12 @@ class EcommerceController extends BaseController
         echo view('admin_dashboard/common/footer',$data); 
     }
 
-    
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/  
     public function ShippingChargeEditMethod($id){
         $shippingchargeModel = new ShippingchargeModel();
 
@@ -553,6 +758,12 @@ class EcommerceController extends BaseController
         return redirect()->to(base_url('shipping-charge'));       
     }    
 
+
+/*
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+*/
     public function stockSettingsMethod(){
         $siteinfoModel = new SiteinfoModel();
         $shippingchargeModel = new ShippingchargeModel();

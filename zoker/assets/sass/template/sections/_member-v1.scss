@@ -1,0 +1,59 @@
+.vs-member-layout1{
+
+  a {
+    color: inherit;
+  }
+  
+  .vs-member {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 40px;
+    }
+    
+    &:before {
+      height: 40%;
+      background-image: linear-gradient(to top, rgba($theme-color2-opacity, 0.9) 10%, rgba(255,255,255,0) 100%);
+      top: auto;
+    }
+
+    &:after {
+      background-color: #1b1d25;
+      z-index: -1;
+    }
+  }
+
+  .member-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: 18px;
+  }
+
+  .degi {
+    color: $white-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.2em;
+  }
+
+  .member-name {
+    color: $white-color;
+    text-transform: uppercase;
+  }
+
+
+
+}

@@ -1,0 +1,60 @@
+@each $colorsMap, $value in $colorsMap {
+  .bg-#{$colorsMap} {
+    background-color: #{$value} !important;
+  }
+}
+
+.bg-smoke2 {
+  background-color: #fafafa;
+}
+
+.bg-major-black {
+  background-color: #171920;
+}
+
+.bg-gradient {
+  background-image: $gradient;
+}
+
+[data-bg-src] {
+  @include background-content(no-repeat, cover, center center);
+}
+
+.bg-fluid {
+  @include background-content(no-repeat, 100% 100%, center center);
+}
+
+.bg-auto {
+  background-size: auto auto;
+}
+
+.bg-bottom {
+  background-position: center bottom;
+}
+
+.bg-top {
+  background-position: center top;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+
+.bg1 {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.home4-bg1 {
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+@include xl {
+  .home4-bg1 {
+    background-position: center bottom;
+    background-size: cover;
+  }
+}

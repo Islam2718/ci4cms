@@ -1,0 +1,119 @@
+.tab-content {
+  overflow: hidden;
+}
+
+.tab-pane {
+  opacity: 1;
+  position: relative;
+  transition: all 0s;
+}
+
+
+
+.tab-menu1 {
+  position: relative;
+  z-index: 2;
+  
+  a {
+    font-weight: 700;
+    font-size: 18px;
+    color: $title-color;
+    letter-spacing: -0.03em;
+    padding: 17px 40px;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all ease 0.8s;
+
+    &.active {
+      color: $white-color;
+    }
+  }
+
+  .indicator {
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    transition: all ease 0.4s;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-image: $gradient;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      z-index: -2;
+      margin-left: -8px;
+      bottom: -8px;
+      left: 50%;
+      transform: rotate(45deg);
+      background-image: linear-gradient(112deg, rgba(var(--theme-color2), 1) 0%, rgba(var(--theme-color), 1) 100%);
+    }    
+  }
+
+
+  &.nav-fill {
+    a {
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+    .indicator {
+      &::before {
+        width: 14px;
+        height: 14px;
+        margin-left: -7px;
+        bottom: -7px;
+      }
+    }
+  }
+}
+
+
+.tab-menu2 {
+  margin-bottom: 30px;
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: none;
+    color: $title-color;
+    padding: 14px 25px;
+    border-color: transparent;
+    
+    &.active {
+      border-color: #e5e5e5 #e5e5e5 $white-color #e5e5e5;
+      background-color: transparent;
+      color: $theme-color2;
+    }
+  }
+}
+
+
+@include md {
+  .tab-menu1 a {
+    font-size: 16px;
+    padding: 7px 28px;
+  }
+}
+
+@include xs {
+  .tab-menu1 a {
+    font-size: 14px;
+    padding: 7px 24px;
+  }
+
+  .tab-menu2 .nav-link {
+    padding: 9px 20px;
+    font-size: 16px;
+  }
+}

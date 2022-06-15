@@ -1,301 +1,315 @@
-<!--================Product Details start==========-->
-    <section class="main-content">
-        <div class="container container-xxl">
-            <div class="row d-flex justify-content-between">
-                <div class="col-lg-5 col-md-5 single-product-page-content">
+<!--=============================  Breadcumb ============================ -->
+    <div class="breadcumb-wrapper breadcumb-layout1 pt-200 pb-50" data-bg-src="<?= base_url(); ?>/zoker/assets/img/breadcumb/breadcumb-1.jpg" data-overlay>
+        <div class="container z-index-common">
+            <div class="breadcumb-content text-center">
+                <h1 class="breadcumb-title h1 text-white my-0">merchandise</h1>
+                <h2 class="breadcumb-bg-title">Product</h2>
+                <ul class="breadcumb-menu-style1 text-white mx-auto fs-xs">
+                    <li><a href="index.html"><i class="fal fa-home"></i>Home</a></li>
+                    <li class="active">Shop Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    <div class="product__carousel">
-                        <div class="gallery-parent">
-                            <!-- SwiperJs and EasyZoom plugins start -->
-                            <div class="swiper-container gallery-top">
-                                <div class="swiper-wrapper">
-                                    <?php
-                                        $mystring = $productById['product_gallery']; 
-                                        $proGalArray = explode('##', $mystring); 
-                                        $i=0; 
-                                        foreach ($proGalArray as $proGal) { $i++; 
-                                            if(!empty($proGal)){
-                                    ?>
-                                    <div class="swiper-slide easyzoom easyzoom--overlay">
-                                        <a href="<?= base_url('/uploads/'.$proGal); ?>">
-                                            <img src="<?= base_url('/uploads/'.$proGal); ?>" alt="" />
-                                        </a>
-                                    </div>                                                
-                                    <?php } } ?>                                     
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next swiper-button-white" style="background-color:transparent;"></div>
-                                <div class="swiper-button-prev swiper-button-white"  style="background-color:transparent;"></div>
+<!--============================== Product Area =============================-->
+    <section class="vs-product-details space-top space-md-bottom">
+        <div class="container">
+            <div class="position-relative z-index-common py-lg-60">
+                <div class="product-details-shape bg-smoke"></div>
+                <div class="row">               	
+                    <div class="col-lg-6 ">
+                        <div class="product-main-img text-center pt-30 pt-lg-60">
+                            <div class="product-share">
+                                <a href="#" class="icon1 text-reset"><i class="fal fa-share-alt fs-20"></i></a>
                             </div>
-                            <div class="swiper-container gallery-thumbs">
-                                <div class="swiper-wrapper">
-
-                        <?php
-                            $mystring = $productById['product_gallery']; 
-                            $proGalArray = explode('##', $mystring); 
-
-                            $i=0; 
-                            foreach ($proGalArray as $proGal) { $i++; 
-                                if(!empty($proGal)){
-                        ?>
-                                    <div class="swiper-slide <?php if($i==0){ echo 'active'; }else{ echo 'na'; } ?>">
-                                        <img src="<?= base_url('/uploads/'.$proGal); ?>" alt="" />
-                                    </div>
-                        <?php } } ?>  
+                            <img src="<?= base_url('/uploads/'.$productArrayById['thumb']); ?>" class="zoom-img" alt="Product Image">
+                        </div>
+                        <div class="product-thum-slide">
+                            <div class="vs-carousel" data-slide-show="4" id="thumbSlide">
+<?php 
+	$productGalString = $productArrayById['product_gallery']; 
+	$productGalArray = explode('##', $productGalString);
+	$proGalCount = count($productGalArray);
+	$i=0; 
+	foreach($productGalArray as $proGalData){ $i++; if($i < $proGalCount){
+?>
+                                <div class="thumb m-1">
+                                    <img src="<?= base_url('/uploads/'.$proGalData); ?>" class="zoom-thumb" data-zoom-image="<?= base_url('/uploads/'.$proGalData); ?>" alt="Product Image">
                                 </div>
-                            </div>
-                            <!-- SwiperJs and EasyZoom plugins end -->
+<?php } } ?>
+                                <div class="thumb">
+                                    <img src="<?= base_url('/uploads/'.$productArrayById['thumb']); ?>" class="zoom-thumb" data-zoom-image="<?= base_url('/uploads/'.$productArrayById['thumb']); ?>" alt="Product Image">
+                                </div>                           
+                           </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="product-single-item" data-product-id="<?= $productById['id']; ?>" 
-                    data-name="<?= $productById['title']; ?>" 
-                    data-price="<?php if($productById['offer_price']){ echo $productById['offer_price']; }else{ echo $productById['sell_price']; } ?>" 
-                    data-image="<?= base_url('/uploads/'.$productById['thumb']); ?>"
-                    > 
-                        <div class="product-bottom">
-                            <div class="product-d-link">
-                                <div class="product-name" style="font-size: 22px;">
-                                    <?= $productById['title']; ?>
-                                </div>
-                                <div class="product-color">
-                                    <?= $productById['product_color']; ?>
-                                </div>
-                                <div class="product-price">
-                                    <div class="regular-price" style="font-size: 17px;">৳ <span class="ml-2">
-                                        <?php if($productById['offer_price']!=''){ ?>
-                                            <del><?= sprintf('%0.2f',$productById['sell_price']); ?></del>
-                                            <?= sprintf('%0.2f',$productById['offer_price']); ?>
-                                        <?php }else{ ?> 
-                                            <?= sprintf('%0.2f',$productById['sell_price']); ?>
-                                        <?php } ?>
-                                    </span>
-                                    </div>
-                                </div>
+                    <div class="col-lg-6">
+                        <div class="product-about">
+                            <div class="mb-2">
+                                <span class="text-yellow fs-xs me-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="d-inline-block">(2 Customer Review)</span>
                             </div>
-                            
+                            <h3 class="product-name font-theme text-normal"><?= $productArrayById['title']; ?></h3>
+                            <h4 class="product-price text-theme2">$50.00</h4>
+                            <hr class="border-dashed-light mt-25 mb-20">
+                            <div class="mb-2"><?= $productArrayById['short_description']; ?></div>
+                            <div class="cart-btn-group">
+                                <a href="tel:<?= $siteInfo['phone']; ?>" class="vs-btn">Call Now</a>
+                                <a href="#" class="icon-btn3"><i class="far fa-heart"></i></a>
+                            </div>
                         </div>
-                        <div class="product-size-part d-flex justify-content-between align-items-end mt-5">
-                            <div class="product-size">
-                                <h4 style="margin-bottom:-15px">SIZE</h4>
-                                <fieldset>
-                                    <ul class="product-single-size">
-                                        <?php if(strpos($productById['product_size'], '32-') !== false){?>
-                                        <li>
-                                            <input type="radio" name="size" id="dress32" value="32">
-                                            <label class="b-1" for="dress32">32</label>
-                                        </li>                                 
-                                        <?php } ?>
-
-                                        <?php if(strpos($productById['product_size'], '34-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress34" value="34">
-                                            <label class="b-1" for="dress34">34</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '36-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress36" value="36">
-                                            <label class="b-1" for="dress36">36</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '38-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress38" value="38">
-                                            <label class="b-1" for="dress38">38</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '40-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress40" value="40">
-                                            <label class="b-1" for="dress40">40</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '42-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress42" value="42">
-                                            <label class="b-1" for="dress42">42</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '44-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress44" value="44">
-                                            <label class="b-1" for="dress44">44</label>
-                                        </li>                                
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '46-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress46" value="46">
-                                            <label class="b-1" for="dress46">46</label>
-                                        </li>                               
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '48-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress48" value="48">
-                                            <label class="b-1" for="dress48">48</label>
-                                        </li>                              
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '50-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress50" value="50">
-                                            <label class="b-1" for="dress50">50</label>
-                                        </li>                              
-                                        <?php } ?>
-                                        
-                                        <?php if(strpos($productById['product_size'], '52-') !== false){?>
-                                      <li>
-                                            <input type="radio" name="size" id="dress52" value="52">
-                                            <label class="b-1" for="dress52">52</label>
-                                        </li>                              
-                                        <?php } ?>
-
+                    </div>
+                </div>
+            </div>
+            <div class="pt-40 pt-lg-60">
+                <ul class="nav nav-tabs tab-menu2" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="desc-tab" data-bs-toggle="tab" href="#desc" role="tab" aria-controls="desc" aria-selected="true">Description</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Review (02)</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane " id="desc" role="tabpanel" aria-labelledby="desc-tab">
+                       <?= $productArrayById['description']; ?>
+                    </div>
+                    <div class="tab-pane show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                        <div class="vs-comment-area list-style-none vs-comments-layout1   ">
+                            <ul class="comment-list">
+                                <li class="vs-comment">
+                                    <div class="vs-post-comment">
+                                        <div class="author-img">
+                                            <img src="<?= base_url(); ?>/zoker/assets/img/author/comment-1-1.png" alt="Comment Author">
+                                        </div>
+                                        <div class="comment-content">
+                                            <div class="comment-top">
+                                                <div class="comment-author">
+                                                    <h4 class="name">Mark Jack</h4>
+                                                    <div class="mb-10">
+                                                        <span class="text-yellow fs-xs me-3">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </span>
+                                                        <span class="commented-on">22 April, 2021</span>
+                                                    </div>
+                                                </div>
+                                                <div class="reply_and_edit">
+                                                    <a href="blog-details.html" class="vs-btn "><i class="fal fa-reply-all mr-10"></i>Replay</a>
+                                                </div>
+                                            </div>
+                                            <p class="text">Progressively procrastinate mission-critical action items before team building ROI.
+                                                Interactively provide access to cross functional quality vectors for client-centric catalysts for change.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul class="children">
+                                        <li class="vs-comment">
+                                            <div class="vs-post-comment">
+                                                <div class="author-img">
+                                                    <img src="<?= base_url(); ?>/zoker/assets/img/author/comment-1-2.png" alt="Comment Author">
+                                                </div>
+                                                <div class="comment-content">
+                                                    <div class="comment-top">
+                                                        <div class="comment-author">
+                                                            <h4 class="name">Peter Parker</h4>
+                                                            <div class="mb-10">
+                                                                <span class="text-yellow fs-xs me-3">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </span>
+                                                                <span class="commented-on">22 April, 2021</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="reply_and_edit">
+                                                            <a href="blog-details.html" class="vs-btn "><i class="fal fa-reply-all mr-10"></i>Replay</a>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Competently provide access to fully researched methods of empowerment without sticky models. Credibly morph front-end niche markets.</p>
+                                                </div>
+                                            </div>
+                                        </li>
                                     </ul>
-                                </fieldset>
-                            </div>
-                            
-                            
-                            <div class="size-guide text-left mt-3">
-                                <button type="button" class="size-modal" data-toggle="modal" data-target="#size_chart">
-                                    SIZE GUIDE 
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="size_chart" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                </li>
+                                <li class="vs-comment">
+                                    <div class="vs-post-comment">
+                                        <div class="author-img">
+                                            <img src="<?= base_url(); ?>/zoker/assets/img/author/comment-1-3.png" alt="Comment Author">
+                                        </div>
+                                        <div class="comment-content">
+                                            <div class="comment-top">
+                                                <div class="comment-author">
+                                                    <h4 class="name">John Deo</h4>
+                                                    <div class="mb-10">
+                                                        <span class="text-yellow fs-xs me-3">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </span>
+                                                        <span class="commented-on">22 April, 2021</span>
+                                                    </div>
+                                                </div>
+                                                <div class="reply_and_edit">
+                                                    <a href="blog-details.html" class="vs-btn "><i class="fal fa-reply-all mr-10"></i>Replay</a>
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
-                                                <img src="<?= base_url('/uploads/'.$siteInfo['size_guide']); ?>" class="img-fluid" alt="">
-                                            </div>
+                                            <p class="text">Competently provide access to fully researched methods of empowerment without sticky models. Credibly morph front-end niche markets whereas 2.0 users. Enthusiastically seize team.</p>
                                         </div>
                                     </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vs-comment-form comment-form-layout1 bg-smoke px-40 py-40 mb-30 mt-lg-30">
+                            <div class="form-title">
+                                <h3 class="h4 font-theme text-normal mt-n2">Add A Review</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="vs-rating-input mb-20">
+                                        <strong>Your rating: </strong>
+                                        <span class="active"><i class="fas fa-star"></i></span>
+                                        <span class="active"><i class="fas fa-star"></i></span>
+                                        <span class="active"><i class="fas fa-star"></i></span>
+                                        <span class="active"><i class="fas fa-star"></i></span>
+                                        <span class="active"><i class="fas fa-star"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <textarea placeholder="Write a Message" class="form-control" rows="8" cols="5"></textarea>
+                                    <i class="fal fa-pencil-alt me-2"></i>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="text" placeholder="Your Name" class="form-control">
+                                    <i class="fal fa-user me-2"></i>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="text" placeholder="Your Email" class="form-control">
+                                    <i class="fal fa-envelope me-2"></i>
+                                </div>
+                                <div class="col-12 form-group mb-0">
+                                    <button class="vs-btn gradient-btn no-skew">Submit Review</button>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="add-to-cart-lg">
-                            <!-- <input type="submit" value="ADD TO CART"> -->
-                            <button class="add-to-cart-single">ADD TO CART</button>
-                        </div>
-
-                        <!--==============Collapse info========-->
-                        <div id="accordion" class="accordion p-details-accordion">
-                            <div class="card mb-0">
-                                <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
-                                    <a class="card-title">
-                                        DESCRIPTION
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
-                                    <p><?= $productById['description']; ?></p>
-                                </div>
-                                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseTwo">
-                                    <a class="card-title">
-                                        DETAILS & CARE
-                                    </a>
-                                </div>
-                                <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
-                                    <p><?= $productById['short_description']; ?></p>
-                                </div>
-                                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseThree">
-                                    <a class="card-title">
-                                        SIZE & FIT
-                                    </a>
-                                </div>
-                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <?= $productById['size_description']; ?>
-                                    </div>
-                                </div>
-                                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseFour">
-                                    <a class="card-title">
-                                        SHIPPING
-                                    </a>
-                                </div>
-                                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <?= $productById['shipping_details']; ?>
-                                    </div>
-                                </div>
-                                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseFive">
-                                    <a class="card-title">
-                                        RETURN POLICY
-                                    </a>
-                                </div>
-                                <div id="collapseFive" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <?= $productById['return_policy']; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--==============Collapse info========-->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-<!--================Product Details end==========-->
-
-<!--==============Suggested Product start========-->
-    <section class="p-tb-60">
-        <div class="container container-xxl long-line">
-            <div class="suggested-product">
-                <h3>You May also Like</h3>
-            </div>
-            <div class="row pt-5">
-                <div class="col-md-12">
-                    <div class="owl-carousel suggested-product-slider">
-                        <?php foreach($productArray as $proData){ ?>
-                        <div class="item">
-                            <div class="product-part">
-                                <a href="<?= base_url('product-details/'.$proData['id']); ?>" class="product-d-link">
-                                <div class="product-top">
-                                    <div class="product-img">
-                                        <img src="<?= base_url('/uploads/'.$proData['thumb']); ?>" class="img-fluid"
-                                            alt="img not found">
-                                    </div>
-                                </div>
-                                </a>
-                                <div class="product-bottom">
-                                    <a href="<?= base_url('product-details/'.$proData['id']); ?>" class="product-d-link">
-                                        <div class="product-name">
-                                            <?= $proData['title']; ?>
-                                        </div>
-                                        <div class="product-color">
-                                            <?= $proData['product_color']; ?>
-                                        </div>
-                                        <div class="product-price">
-                                            <div class="regular-price">৳ <span class="ml-2"><?= $proData['sell_price']; ?></span></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!--==============Suggested Product end==========-->
+
+<!--============================= Product Area ============================-->
+    <section class="vs-product-wrapper vs-product-layout2 newsletter-pb">
+        <div class="container">
+            <h2 class="mt-n2 font-theme text-normal mb-4">Related Products</h2>
+            <div class="row vs-carousel arrow-margin" data-slide-show="3" data-md-slide-show="2" data-sm-slide-show="2" data-xs-slide-show="1" data-arrows="true">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="vs-product">
+                        <div class="product-img">
+                            <a href="shop-details.html"><img src="<?= base_url(); ?>/zoker/assets/img/product/product-2-1.jpg" class="w-100" alt="Product Image"></a>
+                            <div class="cart-btn-group">
+                                <a href="#" class="icon-btn3"><i class="far fa-heart"></i></a>
+                                <a href="#" class="vs-btn">Add to cart</a>
+                                <a href="#" class="icon-btn3"><i class="far fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="text-yellow fs-xs mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3 class="product-name text-normal font-theme fs-20 lh-base mb-2"><a class="text-inherit" href="shop-details.html">Continually exploit business information portals</a></h3>
+                            <strong class="fs-18 text-theme2">$200.50</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="vs-product">
+                        <div class="product-img">
+                            <span class="label">HOT</span>
+                            <a href="shop-details.html"><img src="<?= base_url(); ?>/zoker/assets/img/product/product-2-2.jpg" class="w-100" alt="Product Image"></a>
+                            <div class="cart-btn-group">
+                                <a href="#" class="icon-btn3"><i class="far fa-heart"></i></a>
+                                <a href="#" class="vs-btn">Add to cart</a>
+                                <a href="#" class="icon-btn3"><i class="far fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="text-yellow fs-xs mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3 class="product-name text-normal font-theme fs-20 lh-base mb-2"><a class="text-inherit" href="shop-details.html">In particular, the garbled words of lorem ipsum</a></h3>
+                            <strong class="fs-18 text-theme2">$200.50</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="vs-product">
+                        <div class="product-img">
+                            <a href="shop-details.html"><img src="<?= base_url(); ?>/zoker/assets/img/product/product-2-3.jpg" class="w-100" alt="Product Image"></a>
+                            <div class="cart-btn-group">
+                                <a href="#" class="icon-btn3"><i class="far fa-heart"></i></a>
+                                <a href="#" class="vs-btn">Add to cart</a>
+                                <a href="#" class="icon-btn3"><i class="far fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="text-yellow fs-xs mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3 class="product-name text-normal font-theme fs-20 lh-base mb-2"><a class="text-inherit" href="shop-details.html">McClintock's eye for detail certainly helped</a></h3>
+                            <strong class="fs-18 text-theme2">$200.50</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="vs-product">
+                        <div class="product-img">
+                            <a href="shop-details.html"><img src="<?= base_url(); ?>/zoker/assets/img/product/product-2-4.jpg" class="w-100" alt="Product Image"></a>
+                            <div class="cart-btn-group">
+                                <a href="#" class="icon-btn3"><i class="far fa-heart"></i></a>
+                                <a href="#" class="vs-btn">Add to cart</a>
+                                <a href="#" class="icon-btn3"><i class="far fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="text-yellow fs-xs mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h3 class="product-name text-normal font-theme fs-20 lh-base mb-2"><a class="text-inherit" href="shop-details.html">Creation timelines for the standard passage vary</a></h3>
+                            <strong class="fs-18 text-theme2">$200.50</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

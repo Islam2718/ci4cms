@@ -1,0 +1,60 @@
+.wp-block-tag-cloud,
+.tagcloud {
+
+  a {
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 10px 24px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: $white-color;
+    color: $body-color;
+    font-weight: 500;
+    border-radius: 150px;
+    text-transform: none;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-image: $gradient;
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease 0.4s;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $white-color !important;
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+  }
+}
+
+.tagcloud {
+  margin-right: -5px;
+  margin-bottom: -10px;
+}
+
+
+@include xs {
+  .wp-block-tag-cloud a,
+  .tagcloud a {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}

@@ -217,7 +217,9 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cat & Product Optoins:</h6>
                         <a class="collapse-item" href="<?= base_url('product-category'); ?>">Product Categories </a>
+                        <a class="collapse-item" href="<?= base_url('product-level'); ?>">Product Level </a>
                         <a class="collapse-item" href="<?= base_url('product-size'); ?>">Product Sizes </a>
+                        <a class="collapse-item" href="<?= base_url('product-color'); ?>">Product Color </a>
                         <a class="collapse-item" href="<?= base_url('product-list'); ?>">Product List </a>
                         <a class="collapse-item" href="<?= base_url('product-add'); ?>">Add Product</a>
                     </div>
@@ -232,12 +234,7 @@
                 <a class="nav-link" href="<?= base_url('orders-Settings'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Orders</span></a>
-            </li>
-            <li class="nav-item <?php if($activeMenu=='shipping'){ echo 'active'; }?>">
-                <a class="nav-link" href="<?= base_url('shipping-charge'); ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Shipping Charge</span></a>
-            </li>  
+            </li> 
             <li class="nav-item <?php if($activeMenu=='shop'){ echo 'active'; }?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clpseReports"
                     aria-expanded="true" aria-controls="clpseReports">
@@ -266,10 +263,11 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">General (sale on/off)</a>
-                        <a class="collapse-item" href="#">Shipping</a>
+                        <a class="collapse-item" href="<?= base_url('shipping-charge'); ?>">Shipping</a>
                         <a class="collapse-item" href="#">Discount</a>
                         <a class="collapse-item" href="#">Vat & Tax</a>
                         <a class="collapse-item" href="#">Coupons</a>
+                        <a class="collapse-item" href="#">Unit</a>
                     </div>
                 </div>
             </li>             
@@ -289,9 +287,9 @@
                 <div id="clpseWalets" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Walets Options:</h6>
-                        <a class="collapse-item" href="#">Expense (CRUD)</a>
-                        <a class="collapse-item" href="#">Income (CRUD)</a>
-                        <a class="collapse-item" href="#">Reports</a>
+                        <a class="collapse-item" href="<?= base_url('wallet-expence'); ?>">Expense (CRUD)||</a>
+                        <a class="collapse-item" href="<?= base_url('wallet-income'); ?>">Income (CRUD)||</a>
+                        <a class="collapse-item" href="<?= base_url('wallet-report'); ?>">Reports||</a>
                     </div>
                 </div>
             </li>

@@ -37,7 +37,9 @@
 <?php $i=0; foreach($productArray as $productData){ $i++; ?>     
     <tr>
       <th scope="row"><?= $i; ?></th>
-      <td><?= $productData['title']; ?></td>
+      <td>
+        <img src="<?= base_url('/uploads/'.$productData['thumb']); ?>" alt="-" style="width:20px; height:20px; ">
+        <?= $productData['title']; ?></td>
       <td>Buy: <?= $productData['buy_price']; ?> | Sell: <?= $productData['sell_price']; ?> Offer: <?= $productData['offer_price']; ?></td>
       <td><?= $productData['meta_key']; ?></td>
       <td>

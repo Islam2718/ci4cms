@@ -1,0 +1,87 @@
+.vs-member-layout2 {
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }  
+  
+  .member-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 2;
+    padding: 25px 25px;
+  }
+
+  .plus-icon {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease 0.3s;
+    transition-delay: 0.1s;
+  }
+
+  .member-links {
+    margin-bottom: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+
+    a {
+      position: relative;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      visibility: visible;
+      @include each-marginX(2, 6, -25px)
+    }
+  }
+
+  .vs-member {
+    position: relative;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 8%, 100% 92%, 90% 100%, 10% 100%, 0% 92%, 0% 8%);
+    margin-bottom: 30px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 50%;
+      background-image: linear-gradient(to top, rgba($theme-color2-opacity, 0.7) 0%, rgba($theme-color-opacity, 0) 100%);
+      z-index: 1;
+    }
+
+    &:hover {
+      .plus-icon {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 0s;
+      }
+      
+      .member-links {
+        a {
+          opacity: 1;
+          visibility: visible;
+          @include each-marginX(2, 6, 0)
+        }
+      }
+    }
+  }   
+}
+
+
+@include sm {
+  .vs-member-layout2 {
+    .member-content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

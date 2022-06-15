@@ -1,0 +1,27 @@
+.vs-blog-layout1 {
+  .vs-blog{
+    margin-bottom: 25px;
+  }
+  
+  .blog-category {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+  }
+
+  .blog-image {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  
+  .blog-title {
+    text-transform: uppercase;
+    font-family: $body-font;
+    margin-bottom: 7px;
+  }
+
+  .fs-20 {
+    line-height: 30px;
+  }
+}

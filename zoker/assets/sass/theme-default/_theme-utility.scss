@@ -1,0 +1,294 @@
+.video-box1,
+.hover-shape,
+.image-scale-hover {
+  overflow: hidden;
+
+  img {
+    transition: all ease 0.4s;
+    transform: scale(1.001);
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+.link-inherit {
+  & a,
+  * a {
+    color: inherit;
+
+    &:hover {
+      color: $theme-color2;
+    }
+  }
+}
+
+
+.links-stretch,
+.list-style-none {
+  ol,
+  ul,
+  & {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+
+
+.form-messages {
+  display: none;
+
+  &.success {
+    color: $success-color;
+    display: block;
+  }
+  &.error {
+    color: $error-color;
+    display: block;
+  }
+}
+
+.z-index-step1 {
+  position: relative;
+  z-index: 41 !important;
+}
+
+.z-index-common {
+  position: relative;
+  z-index: 3;
+}
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &[class*=text-] {
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.blog-social-links .nav,
+.links-stretch {
+  a {
+    padding: 0;
+  }
+  
+  span {
+    background-color: $theme-color;
+    color: $white-color;
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    opacity: 1;
+    font-family: $body-font;
+    transition: all ease 0.4s;
+    
+    &::before {
+      font-family: $icon-font;
+      font-weight: 700;
+      margin-right: 10px;
+      font-size: 16px;
+      vertical-align: middle;
+    }
+
+    &.fab {
+      &::before {
+        font-family: 'Font Awesome\ 5 Brands';
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+    
+    &.fa-facebook-f {
+      background-color: #3b5999;
+    }
+
+    &.fa-twitter {
+      background-color: #55acee;
+    }
+    &.fa-youtube {
+      background-color: #cd201f;
+    }
+    &.fa-vimeo {
+      background-color: #00adef;
+    }
+  }  
+}
+
+
+.links-stretch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  li {
+    flex: 0 0 calc(50% - 5px);
+    display: inline-block;
+  }
+
+  span {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }  
+}
+
+.blog-social-links .nav {
+  gap: 15px;
+}
+
+.animate-line {
+  position: relative;
+  overflow: hidden;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40%;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, 
+    rgba($color: #959fa9, $alpha: 0.3) 30%, 
+    rgba($color: #959fa9, $alpha: 0.3) 60%, 
+    rgba(255, 255, 255, 0) 100%);
+    animation: animate-line 8s linear infinite;
+  }
+
+  &:after {
+    animation-delay: 4s;
+  }
+}
+
+// Custom Cursor Design
+.vs-cursor,
+.vs-cursor2 {
+  position: absolute;
+  border-radius: 50%;
+  transition: none;
+  pointer-events: none;
+  z-index: 99999;
+  display: inline-block;
+
+  @include md {
+    display: none;
+  }
+}
+
+
+.vs-cursor {
+  @include equal-size(7px);
+  background-color: $yellow-color;
+  top: 0;
+  left: 0;
+
+  &.style2 {
+    top: -9px;
+    left: -9px;
+    @include equal-size(30px);
+    background-color: transparent;
+    background-image: $gradient;
+    opacity: 0.7;
+  }
+}
+
+.vs-cursor2 {
+  @include equal-size(30px);
+  border: 1px solid $yellow-color;
+  top: 9px;
+  left: 9px;
+
+  &.style2 {
+    border-color: transparent;
+  }
+}
+
+
+
+
+.shadow-sm-1 {
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.04);
+}
+
+.border-black {
+  border-color: #000000 !important;
+}
+
+.media-body {
+  flex: 1;
+}
+
+
+.border-dashed-light {
+  border-top: 1px dashed #d6cdcd;
+}
+
+.new-label {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  right: -4px;
+  background: $theme-color3;
+  line-height: 1;
+  text-transform: capitalize;
+  color: $white-color;
+  border-radius: 10px;
+  padding: 3px 6px;
+  font-size: 11px;
+  z-index: 3;
+}
+
+@media (min-width: $xl) {
+  .d-hd-block {
+    display: block !important;
+  }
+}
+
+@media (max-width: $ml) {
+  .d-ml-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: $lg) {
+  .hide-ml {
+    display: none;
+  }
+}
+
+@include ml {
+  .show-ml {
+    display: block;
+  }
+}

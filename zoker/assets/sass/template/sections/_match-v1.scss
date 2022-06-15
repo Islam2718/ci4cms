@@ -1,0 +1,118 @@
+.vs-match-layout1 {
+  .vs-match {
+    background-color: #171a21;
+    padding: 30px 60px;
+    margin-bottom: 15px;
+  }
+
+  .match-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .versus {
+    display: inline-block;
+    @include equal-size(40px);
+    line-height: 38px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: $white-color;
+    border: 2px solid #4e5159;
+    border-radius: 50%;
+    position: relative;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($color: #fff, $alpha: 0.10);
+      border-radius: 50%;
+      @extend .ripple-animation;
+    }
+  }
+
+  .team-name {
+    text-transform: uppercase;
+
+    a {
+      color: inherit;
+    }
+    
+  }
+
+  .match-date {
+    font-size: 14px;
+    color: #9498a1;
+    font-family: $title-font;
+    font-weight: 400;
+  }
+
+  .match-time {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1;
+  }  
+}
+
+
+
+
+
+@include lg {
+  .vs-match-layout1 {
+    .match-logo {
+      img {
+        max-width: 60px;
+      }
+    }
+
+    .vs-match {
+      padding: 30px 20px;
+    }
+
+    .versus {
+      margin: 0 10px;
+    }
+
+    .match-about {
+      margin: 20px 0;
+      
+      &.pl-35 {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include md {
+  .vs-match-layout1 {
+
+    .vs-match {
+      padding: 20px 20px;
+    }
+
+    .match-about {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .team-name.h5 {
+      font-size: 16px;
+    }
+
+    .match-logo {
+      justify-content: center;
+    }
+
+    .match-time {
+      font-size: 34px;
+    }
+  }
+}

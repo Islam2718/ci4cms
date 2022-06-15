@@ -1,0 +1,63 @@
+.events-layout1 {
+  a {
+    color: inherit;
+
+    &:Hover {
+      color: $theme-color;
+    }
+  }
+  
+  .media-img {
+    margin-right: 50px;
+  }
+
+  .events-list {
+    li {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .vs-events {
+    margin-bottom: 30px;
+    padding: 45px 50px; 
+  }
+}
+
+
+@include lg{
+  .events-layout1 {
+    .media-img {
+      margin-right: 20px;
+      max-width: 100px;
+    }
+
+    .vs-events {
+      padding: 20px 20px 18px 20px;
+    }
+
+    .events-name {
+      margin-bottom: 7px;
+    }
+  }
+}
+
+@include md {
+  .events-layout1 {
+    .media-img {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .vs-events {
+      text-align: center;
+    }
+  }
+}
